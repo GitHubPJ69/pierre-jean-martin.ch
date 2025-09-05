@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pierre‑Jean Martin — Ingénieur & formateur</title>
+  <meta name="description" content="Site personnel de Pierre‑Jean Martin — ingénieur EPFL, formateur et entrepreneur." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='58' fill='white' font-family='Arial, Helvetica, sans-serif'%3EPJ%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg:#0e0f12;--card:#14161b;--muted:#a6abb6;--text:#f5f7fa;--acc:#5eead4;--ring:#2dd4bf;
+      --pad:clamp(16px,2vw,24px);--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, #14202b 0%, transparent 60%),
+                 radial-gradient(900px 600px at 120% -20%, #1a1525 0%, transparent 60%),
+                 var(--bg);
+         color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 var(--pad)}
+    .nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(14,15,18,.45);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem var(--pad)}
+    .brand{display:flex;gap:.7rem;align-items:center;font-weight:700}
+    .brand-logo{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--ring),#60a5fa)}
+    .brand-logo span{font-weight:900}
+    .menu{display:flex;gap:1rem}
+    .menu a{opacity:.85;text-decoration:none;padding:.4rem .6rem;border-radius:999px}
+    .menu a:hover{background:rgba(255,255,255,.06);opacity:1}
+
+    .hero{padding:clamp(48px,8vw,120px) 0}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,4vw,36px);align-items:center}
+    .badge{display:inline-flex;gap:.5rem;align-items:center;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.3);color:var(--acc);padding:.35rem .6rem;border-radius:999px;font-weight:600}
+    h1{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:.6rem 0}
+    .lead{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:60ch}
+    .cta{display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.12);padding:.7rem 1rem;border-radius:12px;text-decoration:none;transition:transform .04s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,var(--ring),#60a5fa);color:#0b1320;border:0;font-weight:800}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .grid{display:grid;gap:clamp(16px,2.5vw,24px)}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+
+    section{padding:clamp(36px,6vw,68px) 0}
+    section h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 .8rem}
+    .skills{display:flex;flex-wrap:wrap;gap:.6rem}
+    .chip{padding:.35rem .6rem;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04)}
+
+    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
+    .muted{color:var(--muted)}
+    .project{padding:1rem}
+    .project h3{margin:.2rem 0}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><div class="brand-logo"><span>PJ</span></div> Pierre‑Jean Martin</div>
+      <div class="menu">
+        <a href="#apropos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge">Ingénieur EPFL • Formateur • Entrepreneuriat</span>
+        <h1>Construire, transmettre, optimiser.</h1>
+        <p class="lead">Je conçois des solutions mêlant robotique, IA et pédagogie. Ici, vous trouverez mes projets, mes cours et comment travailler ensemble.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Me contacter</a>
+          <a class="btn" href="#projets">Voir mes projets</a>
+        </div>
+      </div>
+      <div class="card" style="padding:1rem">
+        <img alt="Illustration" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop" style="width:100%;height:auto;border-radius:12px"/>
+      </div>
+    </div>
+  </header>
+
+  <section id="apropos">
+    <div class="container grid cols-2">
+      <div class="card" style="padding:1.2rem">
+        <h2>À propos</h2>
+        <p class="muted">Ingénieur en robotique (EPFL), formateur en mathématiques et informatique, je développe aussi des projets entrepreneuriaux (énergie solaire, coach IA pour étudiant·es).</p>
+        <div class="skills" aria-label="Compétences">
+          <span class="chip">Python</span>
+          <span class="chip">C/C++</span>
+          <span class="chip">Java</span>
+          <span class="chip">IA & LLM</span>
+          <span class="chip">Pédagogie</span>
+          <span class="chip">Finances perso</span>
+        </div>
+      </div>
+      <div class="card" style="padding:1.2rem">
+        <h2>Ce que je propose</h2>
+        <ul>
+          <li>Création de supports pédagogiques et cours (Maths, Python, C/C++, Java).</li>
+          <li>Conseil en organisation et réussite académique (coach IA).</li>
+          <li>Projets techniques: robotique, traitement d'images, prototypage.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="container">
+      <h2>Projets récents</h2>
+      <div class="grid cols-3">
+        <article class="card project">
+          <h3>Coach IA académique</h3>
+          <p class="muted">Plateforme d'accompagnement étudiant·es: planification, QCM intelligents, feedback instantané.</p>
+          <a class="btn" href="#contact">Demander une démo</a>
+        </article>
+        <article class="card project">
+          <h3>Solaires plug‑and‑play</h3>
+          <p class="muted">Étude techno‑éco et pilote local pour micro‑production à domicile.</p>
+          <a class="btn" href="#contact">En savoir plus</a>
+        </article>
+        <article class="card project">
+          <h3>Supports de cours</h3>
+          <p class="muted">Devoirs interactifs, fiches mémo, et exercices auto‑corrigés.</p>
+          <a class="btn" href="#contact">Voir un exemple</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container grid cols-2">
+      <div class="card" style="padding:1.2rem">
+        <h2>Contact</h2>
+        <p>Envoyez‑moi un message : <a href="mailto:contact@pierre-jean-martin.com">contact@pierre‑jean‑martin.com</a></p>
+        <p>Ou réservez un créneau : <a href="#">Calendrier</a> (lien à insérer).</p>
+      </div>
+      <form class="card" style="padding:1.2rem" onsubmit="event.preventDefault(); alert('Merci ! Votre message est simulé en démo.');">
+        <label>Nom<br><input required style="width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--text)"></label>
+        <br><br>
+        <label>Email<br><input type="email" required style="width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--text)"></label>
+        <br><br>
+        <label>Message<br><textarea required rows="4" style="width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--text)"></textarea></label>
+        <br><br>
+        <button class="btn primary" type="submit">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="grid cols-2">
+        <div>© <span id="year"></span> Pierre‑Jean Martin · Tous droits réservés</div>
+        <div class="muted" style="text-align:right">Blah Blah Blah</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
