@@ -81,6 +81,17 @@
     return email;
   }
 
+  function injectWhatsapp(){
+    // International format, no '+', no leading zero. Assembled from fragments
+    // so the literal doesn't appear in the HTML source for naive scrapers.
+    const number = ["33","6","20","80","30","36"].join("");
+    document.querySelectorAll("[data-whatsapp]").forEach(el => {
+      const text = el.dataset.whatsapp || "";
+      const url = "https://wa.me/" + number + (text ? "?text=" + encodeURIComponent(text) : "");
+      if (el.tagName === "A") el.href = url;
+    });
+  }
+
   // -------- Form → mailto --------
   function bindMailtoForms(email){
     document.querySelectorAll("[data-form-mailto]").forEach(form => {
@@ -118,6 +129,7 @@
   // -------- Boot --------
   document.addEventListener("DOMContentLoaded", () => {
     const email = injectEmail();
+    injectWhatsapp();
     setYears();
     bindLangSwitchers();
     bindMobileNav();
