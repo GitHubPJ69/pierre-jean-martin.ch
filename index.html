@@ -3,165 +3,266 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pierre‑Jean Martin — Ingénieur & formateur</title>
-  <meta name="description" content="Site personnel de Pierre‑Jean Martin — ingénieur EPFL, formateur et entrepreneur." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='58' fill='white' font-family='Arial, Helvetica, sans-serif'%3EPJ%3C/text%3E%3C/svg%3E" />
-  <style>
-    :root{
-      --bg:#0e0f12;--card:#14161b;--muted:#a6abb6;--text:#f5f7fa;--acc:#5eead4;--ring:#2dd4bf;
-      --pad:clamp(16px,2vw,24px);--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, #14202b 0%, transparent 60%),
-                 radial-gradient(900px 600px at 120% -20%, #1a1525 0%, transparent 60%),
-                 var(--bg);
-         color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial}
-    a{color:inherit}
-    .container{max-width:1100px;margin:0 auto;padding:0 var(--pad)}
-    .nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(14,15,18,.45);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem var(--pad)}
-    .brand{display:flex;gap:.7rem;align-items:center;font-weight:700}
-    .brand-logo{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--ring),#60a5fa)}
-    .brand-logo span{font-weight:900}
-    .menu{display:flex;gap:1rem}
-    .menu a{opacity:.85;text-decoration:none;padding:.4rem .6rem;border-radius:999px}
-    .menu a:hover{background:rgba(255,255,255,.06);opacity:1}
-
-    .hero{padding:clamp(48px,8vw,120px) 0}
-    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,4vw,36px);align-items:center}
-    .badge{display:inline-flex;gap:.5rem;align-items:center;background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.3);color:var(--acc);padding:.35rem .6rem;border-radius:999px;font-weight:600}
-    h1{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:.6rem 0}
-    .lead{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:60ch}
-    .cta{display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.12);padding:.7rem 1rem;border-radius:12px;text-decoration:none;transition:transform .04s}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.primary{background:linear-gradient(135deg,var(--ring),#60a5fa);color:#0b1320;border:0;font-weight:800}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .grid{display:grid;gap:clamp(16px,2.5vw,24px)}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
-
-    section{padding:clamp(36px,6vw,68px) 0}
-    section h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 .8rem}
-    .skills{display:flex;flex-wrap:wrap;gap:.6rem}
-    .chip{padding:.35rem .6rem;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04)}
-
-    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
-    .muted{color:var(--muted)}
-    .project{padding:1rem}
-    .project h3{margin:.2rem 0}
-  </style>
+  <title
+    data-fr="Pierre-Jean Martin — Ingénieur, formateur, consultant"
+    data-en="Pierre-Jean Martin — Engineer, educator, consultant"
+    data-de="Pierre-Jean Martin — Ingenieur, Dozent, Berater">
+    Pierre-Jean Martin — Ingénieur, formateur, consultant
+  </title>
+  <meta name="description"
+    data-attr-content-fr="Pierre-Jean Martin — ingénieur EPFL, formateur en programmation et IA, consultant pour entreprises. Cours particuliers et missions tech."
+    data-attr-content-en="Pierre-Jean Martin — EPFL engineer, programming and AI trainer, consultant for companies. Private lessons and tech missions."
+    data-attr-content-de="Pierre-Jean Martin — EPFL-Ingenieur, Ausbilder für Programmierung und KI, Berater für Unternehmen. Privatunterricht und Tech-Aufträge."
+    content="Pierre-Jean Martin — ingénieur EPFL, formateur en programmation et IA, consultant pour entreprises. Cours particuliers et missions tech." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0c10'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='44' fill='%23a78bfa' font-family='monospace' font-weight='700'%3EPJ%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand"><div class="brand-logo"><span>PJ</span></div> Pierre‑Jean Martin</div>
-      <div class="menu">
-        <a href="#apropos">À propos</a>
-        <a href="#projets">Projets</a>
-        <a href="#contact">Contact</a>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">PJ</span>
+        <span class="brand-name">Pierre-Jean Martin</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              data-attr-aria-label-fr="Ouvrir le menu"
+              data-attr-aria-label-en="Open menu"
+              data-attr-aria-label-de="Menü öffnen"
+              aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="menu" id="primary-menu">
+        <a href="index.html" class="active"
+           data-fr="Accueil" data-en="Home" data-de="Startseite">Accueil</a>
+        <a href="cours.html"
+           data-fr="Cours" data-en="Lessons" data-de="Kurse">Cours</a>
+        <a href="entreprises.html"
+           data-fr="Entreprises" data-en="Companies" data-de="Unternehmen">Entreprises</a>
+        <a href="#contact"
+           data-fr="Contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
       </div>
     </div>
   </nav>
 
+  <!-- ============ HERO ============ -->
   <header class="hero">
     <div class="container hero-inner">
       <div>
-        <span class="badge">Ingénieur EPFL • Formateur • Entrepreneuriat</span>
-        <h1>Construire, transmettre, optimiser.</h1>
-        <p class="lead">Je conçois des solutions mêlant robotique, IA et pédagogie. Ici, vous trouverez mes projets, mes cours et comment travailler ensemble.</p>
+        <span class="badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span data-fr="Ingénieur EPFL · Formateur · Consultant IA"
+                data-en="EPFL Engineer · Educator · AI Consultant"
+                data-de="EPFL-Ingenieur · Dozent · KI-Berater">
+            Ingénieur EPFL · Formateur · Consultant IA
+          </span>
+        </span>
+        <h1>
+          <span data-fr="Construire," data-en="Build," data-de="Bauen,">Construire,</span>
+          <span data-fr="transmettre," data-en="teach," data-de="lehren,">transmettre,</span>
+          <span class="grad"
+                data-fr="optimiser." data-en="optimize." data-de="optimieren.">optimiser.</span>
+        </h1>
+        <p class="lead"
+           data-fr="Je conçois des solutions mêlant robotique, IA et pédagogie. Cours particuliers et missions d'entreprise — choisissez l'axe qui vous correspond."
+           data-en="I design solutions blending robotics, AI and teaching. Private lessons or company missions — pick the path that fits you."
+           data-de="Ich entwickle Lösungen, die Robotik, KI und Pädagogik verbinden. Privatunterricht oder Unternehmensaufträge — wählen Sie den passenden Weg.">
+          Je conçois des solutions mêlant robotique, IA et pédagogie. Cours particuliers et missions d'entreprise — choisissez l'axe qui vous correspond.
+        </p>
         <div class="cta">
-          <a class="btn primary" href="#contact">Me contacter</a>
-          <a class="btn" href="#projets">Voir mes projets</a>
+          <a class="btn primary" href="cours.html">
+            <span data-fr="Prendre un cours" data-en="Book a lesson" data-de="Eine Stunde buchen">Prendre un cours</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="entreprises.html">
+            <span data-fr="Travailler ensemble" data-en="Work together" data-de="Zusammenarbeiten">Travailler ensemble</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
-      <div class="card" style="padding:1rem">
-        <img alt="Illustration" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400&auto=format&fit=crop" style="width:100%;height:auto;border-radius:12px"/>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating f1">def solve(x):</div>
+        <div class="floating f2">∇ · E = ρ/ε₀</div>
+        <div class="floating f3">model.predict()</div>
       </div>
     </div>
   </header>
 
+  <!-- ============ ABOUT ============ -->
   <section id="apropos">
-    <div class="container grid cols-2">
-      <div class="card" style="padding:1.2rem">
-        <h2>À propos</h2>
-        <p class="muted">Ingénieur en robotique (EPFL), formateur en mathématiques et informatique, je développe aussi des projets entrepreneuriaux (énergie solaire, coach IA pour étudiant·es).</p>
-        <div class="skills" aria-label="Compétences">
-          <span class="chip">Python</span>
-          <span class="chip">C/C++</span>
-          <span class="chip">Java</span>
-          <span class="chip">IA & LLM</span>
-          <span class="chip">Pédagogie</span>
-          <span class="chip">Finances perso</span>
-        </div>
-      </div>
-      <div class="card" style="padding:1.2rem">
-        <h2>Ce que je propose</h2>
-        <ul>
-          <li>Création de supports pédagogiques et cours (Maths, Python, C/C++, Java).</li>
-          <li>Conseil en organisation et réussite académique (coach IA).</li>
-          <li>Projets techniques: robotique, traitement d'images, prototypage.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projets">
     <div class="container">
-      <h2>Projets récents</h2>
-      <div class="grid cols-3">
-        <article class="card project">
-          <h3>Coach IA académique</h3>
-          <p class="muted">Plateforme d'accompagnement étudiant·es: planification, QCM intelligents, feedback instantané.</p>
-          <a class="btn" href="#contact">Demander une démo</a>
+      <span class="section-eyebrow"
+            data-fr="À propos" data-en="About" data-de="Über mich">À propos</span>
+      <h2 data-fr="Ingénieur, pédagogue, et un peu entrepreneur."
+          data-en="Engineer, educator, and a bit of an entrepreneur."
+          data-de="Ingenieur, Dozent und etwas Unternehmer.">
+        Ingénieur, pédagogue, et un peu entrepreneur.
+      </h2>
+      <p class="section-lead"
+         data-fr="Ingénieur en robotique formé à l'EPFL, je travaille à l'intersection de la programmation, de l'IA et de l'enseignement. J'accompagne autant des étudiant·es dans leurs études que des entreprises dans leurs défis techniques."
+         data-en="A robotics engineer trained at EPFL, I work at the intersection of programming, AI and teaching. I support students through their studies as well as companies tackling technical challenges."
+         data-de="Robotik-Ingenieur mit EPFL-Ausbildung, ich arbeite an der Schnittstelle von Programmierung, KI und Lehre. Ich begleite Studierende ebenso wie Unternehmen bei technischen Herausforderungen.">
+        Ingénieur en robotique formé à l'EPFL, je travaille à l'intersection de la programmation, de l'IA et de l'enseignement. J'accompagne autant des étudiant·es dans leurs études que des entreprises dans leurs défis techniques.
+      </p>
+      <div class="skills">
+        <span class="chip accent">Python</span>
+        <span class="chip accent">C / C++</span>
+        <span class="chip accent">Java</span>
+        <span class="chip accent">IA &amp; LLM</span>
+        <span class="chip"
+              data-fr="Robotique" data-en="Robotics" data-de="Robotik">Robotique</span>
+        <span class="chip"
+              data-fr="Pédagogie" data-en="Teaching" data-de="Pädagogik">Pédagogie</span>
+        <span class="chip">EPFL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GATEWAYS ============ -->
+  <section id="services">
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Deux portes d'entrée" data-en="Two entry points" data-de="Zwei Einstiege">
+        Deux portes d'entrée
+      </span>
+      <h2 data-fr="Par où voulez-vous commencer&nbsp;?"
+          data-en="Where would you like to start?"
+          data-de="Wo möchten Sie beginnen?">
+        Par où voulez-vous commencer&nbsp;?
+      </h2>
+      <div class="grid cols-2" style="margin-top:2rem">
+        <article class="card gateway hover">
+          <span class="section-eyebrow"
+                data-fr="B2C" data-en="B2C" data-de="B2C">B2C</span>
+          <h3 data-fr="Cours particuliers"
+              data-en="Private lessons"
+              data-de="Privatunterricht">Cours particuliers</h3>
+          <p data-fr="Programmation, IA et maths. Du gymnase au bachelor, en ligne ou en Suisse romande. 100 CHF / heure."
+             data-en="Programming, AI and math. From high school to bachelor, online or in French-speaking Switzerland. 100 CHF / hour."
+             data-de="Programmierung, KI und Mathematik. Vom Gymnasium bis zum Bachelor, online oder in der französischsprachigen Schweiz. 100 CHF / Stunde.">
+            Programmation, IA et maths. Du gymnase au bachelor, en ligne ou en Suisse romande. 100 CHF / heure.
+          </p>
+          <a class="btn primary" href="cours.html">
+            <span data-fr="Voir les cours" data-en="See lessons" data-de="Kurse ansehen">Voir les cours</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
         </article>
-        <article class="card project">
-          <h3>Solaires plug‑and‑play</h3>
-          <p class="muted">Étude techno‑éco et pilote local pour micro‑production à domicile.</p>
-          <a class="btn" href="#contact">En savoir plus</a>
-        </article>
-        <article class="card project">
-          <h3>Supports de cours</h3>
-          <p class="muted">Devoirs interactifs, fiches mémo, et exercices auto‑corrigés.</p>
-          <a class="btn" href="#contact">Voir un exemple</a>
+
+        <article class="card gateway hover">
+          <span class="section-eyebrow"
+                data-fr="B2B" data-en="B2B" data-de="B2B">B2B</span>
+          <h3 data-fr="Pour les entreprises"
+              data-en="For companies"
+              data-de="Für Unternehmen">Pour les entreprises</h3>
+          <p data-fr="Intégration LLM, robotique, formation des équipes — en posture d'expert embarqué, consultant externe ou formateur."
+             data-en="LLM integration, robotics, team training — as an embedded expert, external consultant or trainer."
+             data-de="LLM-Integration, Robotik, Mitarbeiterschulungen — als eingebetteter Experte, externer Berater oder Ausbilder.">
+            Intégration LLM, robotique, formation des équipes — en posture d'expert embarqué, consultant externe ou formateur.
+          </p>
+          <a class="btn" href="entreprises.html">
+            <span data-fr="Découvrir l'offre" data-en="Discover the offer" data-de="Angebot entdecken">Découvrir l'offre</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- ============ CONTACT ANCHOR (links to relevant pages) ============ -->
   <section id="contact">
-    <div class="container grid cols-2">
-      <div class="card" style="padding:1.2rem">
-        <h2>Contact</h2>
-        <p>Envoyez‑moi un message : <a href="mailto:contact@pierre-jean-martin.com">contact@pierre‑jean‑martin.com</a></p>
-        <p>Ou réservez un créneau : <a href="#">Calendrier</a> (lien à insérer).</p>
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Contact" data-en="Contact" data-de="Kontakt">Contact</span>
+      <h2 data-fr="Discutons de ce qui vous amène."
+          data-en="Let's talk about what brought you here."
+          data-de="Sprechen wir über Ihr Anliegen.">
+        Discutons de ce qui vous amène.
+      </h2>
+      <p class="section-lead"
+         data-fr="Pour un cours particulier ou pour discuter d'une mission d'entreprise — chaque page a son propre formulaire."
+         data-en="For a private lesson or to discuss a company mission — each page has its own form."
+         data-de="Für Privatunterricht oder eine Unternehmensanfrage — jede Seite hat ihr eigenes Formular.">
+        Pour un cours particulier ou pour discuter d'une mission d'entreprise — chaque page a son propre formulaire.
+      </p>
+      <div class="cta" style="margin-top:.5rem">
+        <a class="btn primary" href="cours.html#reserver">
+          <span data-fr="Réserver un cours" data-en="Book a lesson" data-de="Stunde buchen">Réserver un cours</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn" href="entreprises.html#projet">
+          <span data-fr="Proposer un projet" data-en="Propose a project" data-de="Projekt vorschlagen">Proposer un projet</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn ghost" href="#" data-email data-keep-text>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span data-fr="Email" data-en="Email" data-de="E-Mail">Email</span>
+        </a>
       </div>
-      <form class="card" style="padding:1.2rem" onsubmit="event.preventDefault(); alert('Merci ! Votre message est simulé en démo.');">
-        <label>Nom<br><input required style="width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--text)"></label>
-        <br><br>
-        <label>Email<br><input type="email" required style="width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--text)"></label>
-        <br><br>
-        <label>Message<br><textarea required rows="4" style="width:100%;padding:.6rem;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--text)"></textarea></label>
-        <br><br>
-        <button class="btn primary" type="submit">Envoyer</button>
-      </form>
     </div>
   </section>
 
+  <!-- ============ FOOTER ============ -->
   <footer>
     <div class="container">
-      <div class="grid cols-2">
-        <div>© <span id="year"></span> Pierre‑Jean Martin · Tous droits réservés</div>
-        <div class="muted" style="text-align:right">Blah Blah Blah</div>
+      <div class="footer-inner">
+        <div class="footer-meta">
+          <div class="brand">
+            <span class="brand-logo">PJ</span>
+            <span class="brand-name">Pierre-Jean Martin</span>
+          </div>
+          <span data-fr="Ingénieur · Formateur · Consultant"
+                data-en="Engineer · Educator · Consultant"
+                data-de="Ingenieur · Dozent · Berater">
+            Ingénieur · Formateur · Consultant
+          </span>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/pierre-jean-martin/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15.5H.22V8zm7.55 0h4.37v2.12h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v8.74h-4.56v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1v7.88H7.77V8z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/GitHubPJ69" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.62 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.8.55 4.57-1.53 7.85-5.84 7.85-10.91C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="#" data-email aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          © <span data-year>2026</span> Pierre-Jean Martin ·
+          <span data-fr="Tous droits réservés" data-en="All rights reserved" data-de="Alle Rechte vorbehalten">Tous droits réservés</span>
+        </div>
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

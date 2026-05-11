@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title
+    data-fr="Pour les entreprises — IA, robotique, formation · Pierre-Jean Martin"
+    data-en="For companies — AI, robotics, training · Pierre-Jean Martin"
+    data-de="Für Unternehmen — KI, Robotik, Schulung · Pierre-Jean Martin">
+    Pour les entreprises — IA, robotique, formation · Pierre-Jean Martin
+  </title>
+  <meta name="description"
+    data-attr-content-fr="Ingénieur EPFL — expert embarqué, consultant ou formateur pour vos projets IA, LLM, robotique et formation technique."
+    data-attr-content-en="EPFL engineer — embedded expert, consultant or trainer for your AI, LLM, robotics and technical-training projects."
+    data-attr-content-de="EPFL-Ingenieur — eingebetteter Experte, Berater oder Ausbilder für Ihre Projekte in KI, LLM, Robotik und technischer Schulung."
+    content="Ingénieur EPFL — expert embarqué, consultant ou formateur pour vos projets IA, LLM, robotique et formation technique." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0c10'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='44' fill='%23a78bfa' font-family='monospace' font-weight='700'%3EPJ%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">PJ</span>
+        <span class="brand-name">Pierre-Jean Martin</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              data-attr-aria-label-fr="Ouvrir le menu"
+              data-attr-aria-label-en="Open menu"
+              data-attr-aria-label-de="Menü öffnen"
+              aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="menu" id="primary-menu">
+        <a href="index.html"
+           data-fr="Accueil" data-en="Home" data-de="Startseite">Accueil</a>
+        <a href="cours.html"
+           data-fr="Cours" data-en="Lessons" data-de="Kurse">Cours</a>
+        <a href="entreprises.html" class="active"
+           data-fr="Entreprises" data-en="Companies" data-de="Unternehmen">Entreprises</a>
+        <a href="#projet"
+           data-fr="Projet" data-en="Project" data-de="Projekt">Projet</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO B2B ============ -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span data-fr="Pour les entreprises" data-en="For companies" data-de="Für Unternehmen">Pour les entreprises</span>
+        </span>
+        <h1>
+          <span data-fr="IA, robotique, formation —" data-en="AI, robotics, training —" data-de="KI, Robotik, Schulung —">IA, robotique, formation —</span>
+          <span class="grad"
+                data-fr="exécutées sérieusement."
+                data-en="executed properly."
+                data-de="seriös umgesetzt.">exécutées sérieusement.</span>
+        </h1>
+        <p class="lead"
+           data-fr="Trois postures, une même rigueur d'ingénieur EPFL : expert embarqué dans une équipe tech, consultant externe pour vos décisions stratégiques, ou formateur pour faire monter vos équipes en compétence."
+           data-en="Three roles, one EPFL engineer's standard: embedded expert in a tech team, external consultant for your strategic decisions, or trainer to upskill your teams."
+           data-de="Drei Rollen, ein und derselbe EPFL-Ingenieurstandard: eingebetteter Experte in einem Tech-Team, externer Berater für strategische Entscheidungen, oder Ausbilder zur Weiterentwicklung Ihrer Teams.">
+          Trois postures, une même rigueur d'ingénieur EPFL : expert embarqué dans une équipe tech, consultant externe pour vos décisions stratégiques, ou formateur pour faire monter vos équipes en compétence.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projet">
+            <span data-fr="Discuter d'un projet" data-en="Discuss a project" data-de="Projekt besprechen">Discuter d'un projet</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="#postures">
+            <span data-fr="Voir les modes d'intervention" data-en="See engagement modes" data-de="Einsatzformen ansehen">Voir les modes d'intervention</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating f1">RAG · LLM</div>
+        <div class="floating f2">ROS · OpenCV</div>
+        <div class="floating f3">CI · MLOps</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ POSTURES ============ -->
+  <section id="postures">
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Modes d'intervention" data-en="Engagement modes" data-de="Einsatzformen">Modes d'intervention</span>
+      <h2 data-fr="Trois manières de collaborer."
+          data-en="Three ways to collaborate."
+          data-de="Drei Arten der Zusammenarbeit.">
+        Trois manières de collaborer.
+      </h2>
+      <div class="grid cols-3" style="margin-top:2rem">
+
+        <article class="card posture">
+          <div class="posture-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+          </div>
+          <h3 data-fr="Expert embarqué" data-en="Embedded expert" data-de="Eingebetteter Experte">Expert embarqué</h3>
+          <p class="muted"
+             data-fr="Intégration dans votre équipe tech pour une mission précise — IA, robotique, backend. Vous gardez la main, j'apporte la profondeur technique manquante."
+             data-en="Joining your tech team for a specific mission — AI, robotics, backend. You keep ownership, I bring the missing technical depth."
+             data-de="Integration in Ihr Tech-Team für eine konkrete Mission — KI, Robotik, Backend. Sie behalten die Kontrolle, ich bringe die fehlende technische Tiefe ein.">
+            Intégration dans votre équipe tech pour une mission précise — IA, robotique, backend. Vous gardez la main, j'apporte la profondeur technique manquante.
+          </p>
+        </article>
+
+        <article class="card posture">
+          <div class="posture-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-fr="Consultant externe" data-en="External consultant" data-de="Externer Berater">Consultant externe</h3>
+          <p class="muted"
+             data-fr="Audit, roadmap IA, choix technologiques. Un regard externe et sans complaisance pour sécuriser vos décisions structurantes."
+             data-en="Audit, AI roadmap, tech choices. An outside, honest perspective to de-risk your structural decisions."
+             data-de="Audit, KI-Roadmap, Technologieauswahl. Eine externe und ehrliche Perspektive, um strukturelle Entscheidungen abzusichern.">
+            Audit, roadmap IA, choix technologiques. Un regard externe et sans complaisance pour sécuriser vos décisions structurantes.
+          </p>
+        </article>
+
+        <article class="card posture">
+          <div class="posture-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h3 data-fr="Formateur" data-en="Trainer" data-de="Ausbilder">Formateur</h3>
+          <p class="muted"
+             data-fr="Formations sur mesure : Python, LLM, MLOps, C++ moderne. De l'initiation au niveau avancé, pour faire monter durablement vos équipes."
+             data-en="Tailored training: Python, LLM, MLOps, modern C++. From intro to advanced, to durably upskill your teams."
+             data-de="Maßgeschneiderte Schulungen: Python, LLM, MLOps, modernes C++. Von der Einführung bis zum fortgeschrittenen Niveau, für eine nachhaltige Weiterentwicklung Ihrer Teams.">
+            Formations sur mesure : Python, LLM, MLOps, C++ moderne. De l'initiation au niveau avancé, pour faire monter durablement vos équipes.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPÉTENCES ============ -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Domaines d'expertise" data-en="Areas of expertise" data-de="Fachgebiete">Domaines d'expertise</span>
+      <h2 data-fr="Ce sur quoi je peux vraiment aider."
+          data-en="Where I can actually help."
+          data-de="Wo ich wirklich helfen kann.">
+        Ce sur quoi je peux vraiment aider.
+      </h2>
+      <div class="grid cols-2" style="margin-top:2rem">
+        <article class="card">
+          <h3 data-fr="Intégration LLM &amp; RAG en production"
+              data-en="LLM &amp; RAG integration in production"
+              data-de="LLM- &amp; RAG-Integration in Produktion">
+            Intégration LLM &amp; RAG en production
+          </h3>
+          <p class="muted"
+             data-fr="Architecture RAG, choix de modèles, évaluation, observabilité, coûts. De la POC au déploiement."
+             data-en="RAG architecture, model selection, evaluation, observability, cost. From PoC to deployment."
+             data-de="RAG-Architektur, Modellauswahl, Evaluation, Observability, Kosten. Vom PoC bis zum Deployment.">
+            Architecture RAG, choix de modèles, évaluation, observabilité, coûts. De la POC au déploiement.
+          </p>
+        </article>
+        <article class="card">
+          <h3 data-fr="Robotique &amp; traitement d'image"
+              data-en="Robotics &amp; image processing"
+              data-de="Robotik &amp; Bildverarbeitung">
+            Robotique &amp; traitement d'image
+          </h3>
+          <p class="muted"
+             data-fr="Vision par ordinateur, pipelines ROS, contrôle bas niveau. Formation EPFL en robotique."
+             data-en="Computer vision, ROS pipelines, low-level control. EPFL robotics background."
+             data-de="Computer Vision, ROS-Pipelines, Low-Level-Steuerung. EPFL-Hintergrund in Robotik.">
+            Vision par ordinateur, pipelines ROS, contrôle bas niveau. Formation EPFL en robotique.
+          </p>
+        </article>
+        <article class="card">
+          <h3 data-fr="Formation technique"
+              data-en="Technical training"
+              data-de="Technische Schulung">
+            Formation technique
+          </h3>
+          <p class="muted"
+             data-fr="Python, IA, C++ moderne, bonnes pratiques de développement. Sessions courtes ou parcours longs, pour développeurs ou profils non-tech."
+             data-en="Python, AI, modern C++, dev best practices. Short sessions or longer tracks, for developers or non-tech profiles."
+             data-de="Python, KI, modernes C++, Entwicklungs-Best-Practices. Kurze Sessions oder längere Lernpfade, für Entwickler oder Nicht-Tech-Profile.">
+            Python, IA, C++ moderne, bonnes pratiques de développement. Sessions courtes ou parcours longs, pour développeurs ou profils non-tech.
+          </p>
+        </article>
+        <article class="card">
+          <h3 data-fr="Prototypage rapide &amp; POC"
+              data-en="Rapid prototyping &amp; PoCs"
+              data-de="Rapid Prototyping &amp; PoCs">
+            Prototypage rapide &amp; POC
+          </h3>
+          <p class="muted"
+             data-fr="Cadrage produit, première version exploitable, démos pour décideurs. Mettre une idée à l'épreuve sans surinvestir."
+             data-en="Product scoping, first usable version, demos for decision-makers. Test an idea without overspending."
+             data-de="Produkt-Scoping, erste nutzbare Version, Demos für Entscheidungsträger. Eine Idee prüfen, ohne zu viel zu investieren.">
+            Cadrage produit, première version exploitable, démos pour décideurs. Mettre une idée à l'épreuve sans surinvestir.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RÉFÉRENCES (placeholders) ============ -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Références" data-en="References" data-de="Referenzen">Références</span>
+      <h2 data-fr="Quelques missions récentes."
+          data-en="A few recent missions."
+          data-de="Einige aktuelle Aufträge.">
+        Quelques missions récentes.
+      </h2>
+      <div class="grid cols-3" style="margin-top:2rem">
+
+        <!-- TODO: remplacer par un vrai projet entreprise (secteur, mission, résultat chiffré) -->
+        <article class="card project-ref">
+          <span class="sector"
+                data-fr="Edtech · 2024" data-en="Edtech · 2024" data-de="Edtech · 2024">Edtech · 2024</span>
+          <p class="mission"
+             data-fr="Conception d'un coach IA pour étudiant·es"
+             data-en="Design of an AI coach for students"
+             data-de="Konzeption eines KI-Coachs für Studierende">
+            Conception d'un coach IA pour étudiant·es
+          </p>
+          <p class="result"
+             data-fr="Pipeline RAG, génération de QCM, feedback instantané. Premier MVP en 6 semaines."
+             data-en="RAG pipeline, quiz generation, instant feedback. First MVP in 6 weeks."
+             data-de="RAG-Pipeline, Quiz-Generierung, sofortiges Feedback. Erstes MVP in 6 Wochen.">
+            Pipeline RAG, génération de QCM, feedback instantané. Premier MVP en 6 semaines.
+          </p>
+        </article>
+
+        <!-- TODO: remplacer par un vrai projet entreprise (secteur, mission, résultat chiffré) -->
+        <article class="card project-ref">
+          <span class="sector"
+                data-fr="Énergie · 2023" data-en="Energy · 2023" data-de="Energie · 2023">Énergie · 2023</span>
+          <p class="mission"
+             data-fr="Étude techno-éco solaire plug-and-play"
+             data-en="Plug-and-play solar techno-economic study"
+             data-de="Technisch-wirtschaftliche Studie Plug-and-Play-Solar">
+            Étude techno-éco solaire plug-and-play
+          </p>
+          <p class="result"
+             data-fr="Modélisation des coûts, pilote local, recommandations chiffrées pour le déploiement."
+             data-en="Cost modelling, local pilot, quantified deployment recommendations."
+             data-de="Kostenmodellierung, lokaler Pilot, quantifizierte Empfehlungen für das Deployment.">
+            Modélisation des coûts, pilote local, recommandations chiffrées pour le déploiement.
+          </p>
+        </article>
+
+        <!-- TODO: remplacer par un vrai projet entreprise (secteur, mission, résultat chiffré) -->
+        <article class="card project-ref">
+          <span class="sector"
+                data-fr="Formation · 2024" data-en="Training · 2024" data-de="Schulung · 2024">Formation · 2024</span>
+          <p class="mission"
+             data-fr="Bootcamp Python &amp; IA pour reconversions"
+             data-en="Python &amp; AI bootcamp for career-changers"
+             data-de="Python- &amp; KI-Bootcamp für Berufswechsler">
+            Bootcamp Python &amp; IA pour reconversions
+          </p>
+          <p class="result"
+             data-fr="Programme 12 semaines, supports écrits, suivi individuel. 100 % des candidat·es ayant atteint l'entretien."
+             data-en="12-week programme, written materials, 1:1 follow-up. 100% of trainees reached their interview stage."
+             data-de="12-Wochen-Programm, schriftliche Unterlagen, Einzelbetreuung. 100 % der Teilnehmer haben die Interview-Phase erreicht.">
+            Programme 12 semaines, supports écrits, suivi individuel. 100 % des candidat·es ayant atteint l'entretien.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT B2B ============ -->
+  <section id="projet">
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Projet" data-en="Project" data-de="Projekt">Projet</span>
+      <h2 data-fr="Discutons de votre projet."
+          data-en="Let's talk about your project."
+          data-de="Sprechen wir über Ihr Projekt.">
+        Discutons de votre projet.
+      </h2>
+      <p class="section-lead"
+         data-fr="Décrivez brièvement votre besoin et le mode d'intervention envisagé. Je reviens vers vous sous 48h ouvrées avec un premier retour ou des questions de cadrage."
+         data-en="Briefly describe your need and the engagement mode you have in mind. I'll get back to you within 48 working hours with first feedback or scoping questions."
+         data-de="Beschreiben Sie kurz Ihren Bedarf und die gewünschte Einsatzform. Ich melde mich innerhalb von 48 Werktagstunden mit ersten Rückmeldungen oder Klärungsfragen.">
+        Décrivez brièvement votre besoin et le mode d'intervention envisagé. Je reviens vers vous sous 48h ouvrées avec un premier retour ou des questions de cadrage.
+      </p>
+
+      <form class="card form-card" data-form-mailto
+            data-subject-fr="Demande B2B — projet entreprise"
+            data-subject-en="B2B request — company project"
+            data-subject-de="B2B-Anfrage — Unternehmensprojekt"
+            style="margin-top:2rem">
+        <div class="form-row split">
+          <label for="b-company"
+                 data-fr="Société" data-en="Company" data-de="Unternehmen">Société</label>
+          <input class="field" id="b-company" name="Société" type="text" required>
+        </div>
+        <div class="form-row split">
+          <label for="b-name"
+                 data-fr="Nom du contact" data-en="Contact name" data-de="Ansprechpartner">Nom du contact</label>
+          <input class="field" id="b-name" name="Nom" type="text" required>
+        </div>
+        <div class="form-row split">
+          <label for="b-email">Email</label>
+          <input class="field" id="b-email" name="Email" type="email" required>
+        </div>
+        <div class="form-row split">
+          <label for="b-type"
+                 data-fr="Type de mission" data-en="Engagement type" data-de="Einsatzart">Type de mission</label>
+          <select class="field" id="b-type" name="Type de mission" required>
+            <option value="Conseil"
+                    data-fr="Conseil / Audit"
+                    data-en="Consulting / Audit"
+                    data-de="Beratung / Audit">Conseil / Audit</option>
+            <option value="Formation"
+                    data-fr="Formation"
+                    data-en="Training"
+                    data-de="Schulung">Formation</option>
+            <option value="Intégration"
+                    data-fr="Intégration / Expert embarqué"
+                    data-en="Integration / Embedded expert"
+                    data-de="Integration / Eingebetteter Experte">Intégration / Expert embarqué</option>
+            <option value="Prototype"
+                    data-fr="Prototype / POC"
+                    data-en="Prototype / PoC"
+                    data-de="Prototyp / PoC">Prototype / POC</option>
+            <option value="Autre"
+                    data-fr="Autre"
+                    data-en="Other"
+                    data-de="Andere">Autre</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="b-msg"
+                 data-fr="Décrivez votre besoin"
+                 data-en="Describe your need"
+                 data-de="Beschreiben Sie Ihren Bedarf">Décrivez votre besoin</label>
+          <textarea class="field" id="b-msg" name="Message" rows="5" required
+                    data-attr-placeholder-fr="Contexte, objectifs, contraintes, calendrier indicatif…"
+                    data-attr-placeholder-en="Context, objectives, constraints, indicative timeline…"
+                    data-attr-placeholder-de="Kontext, Ziele, Einschränkungen, ungefährer Zeitplan…"
+                    placeholder="Contexte, objectifs, contraintes, calendrier indicatif…"></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">
+            <span data-fr="Envoyer la demande" data-en="Send request" data-de="Anfrage senden">Envoyer la demande</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+          <a class="btn ghost" href="#" data-email data-keep-text>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <span data-fr="Email direct" data-en="Direct email" data-de="Direkte E-Mail">Email direct</span>
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-meta">
+          <div class="brand">
+            <span class="brand-logo">PJ</span>
+            <span class="brand-name">Pierre-Jean Martin</span>
+          </div>
+          <span data-fr="Ingénieur · Formateur · Consultant"
+                data-en="Engineer · Educator · Consultant"
+                data-de="Ingenieur · Dozent · Berater">
+            Ingénieur · Formateur · Consultant
+          </span>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/pierre-jean-martin/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15.5H.22V8zm7.55 0h4.37v2.12h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v8.74h-4.56v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1v7.88H7.77V8z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/GitHubPJ69" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.62 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.8.55 4.57-1.53 7.85-5.84 7.85-10.91C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="#" data-email aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          © <span data-year>2026</span> Pierre-Jean Martin ·
+          <span data-fr="Tous droits réservés" data-en="All rights reserved" data-de="Alle Rechte vorbehalten">Tous droits réservés</span>
+        </div>
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
