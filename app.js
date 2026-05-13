@@ -27,8 +27,10 @@
       if (tag === "INPUT" || tag === "TEXTAREA") {
         if (el.hasAttribute("placeholder")) el.placeholder = val;
         else el.value = val;
-      } else if (tag === "OPTION") {
-        el.textContent = val;
+      } else if (el.hasAttribute("data-html")) {
+        // Opt-in: render the value as HTML (e.g. when the localized string
+        // contains an inline <a> link). Author-controlled content only.
+        el.innerHTML = val;
       } else {
         el.textContent = val;
       }

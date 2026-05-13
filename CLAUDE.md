@@ -47,6 +47,17 @@ All user-facing text is in the HTML three times via data-attributes, and JS swap
    ```
    The initial inner text should match `data-fr` (FR is the source of truth). `app.js` writes `textContent` for most tags, `placeholder` for `<input>`/`<textarea>` that have one, and `textContent` for `<option>`.
 
+   **Opt-in HTML rendering**: when a localized string needs an inline `<a>` link, add the `data-html` attribute on the element. `app.js` then assigns via `innerHTML` instead of `textContent`. Use single quotes inside the data-attribute to avoid escaping headaches:
+   ```html
+   <p data-html
+      data-fr="Six mois chez <a href='https://...'>Vigyan Ashram</a>."
+      data-en="Six months at <a href='https://...'>Vigyan Ashram</a>."
+      data-de="Sechs Monate bei <a href='https://...'>Vigyan Ashram</a>.">
+     Six mois chez <a href="https://...">Vigyan Ashram</a>.
+   </p>
+   ```
+   Author-controlled content only (no user input ever reaches these attributes).
+
 2. **Localized HTML attributes** (`title`, `aria-label`, `alt`, `content`): use the `data-attr-{attr}-{lang}` pattern AND set the initial attribute:
    ```html
    <button aria-label="Ouvrir le menu"
