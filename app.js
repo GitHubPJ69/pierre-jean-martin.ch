@@ -1,4 +1,4 @@
-/* pierre-jean-martin.ch — shared behaviors
+/* pierre-jean-martin.ch · shared behaviors
    i18n (FR/EN/DE) · footer year · email obfuscation · form → mailto · mobile nav */
 
 (function(){
@@ -68,7 +68,7 @@
 
   function injectEmail(){
     const user = "contact";
-    const domain = "pierre-jean-martin.com";
+    const domain = "pierre-jean-martin.ch";
     const email = [user, domain].join("@");
     document.querySelectorAll("[data-email]").forEach(el => {
       if (el.tagName === "A") {
