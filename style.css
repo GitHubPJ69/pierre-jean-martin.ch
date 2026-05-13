@@ -392,6 +392,24 @@ select.field{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xml
 .parcours-content h3{margin:0;font-size:1.15rem}
 .parcours-content .context{font-family:var(--font-mono);font-size:.85rem;color:var(--muted);margin:0}
 .parcours-content p{margin:0;color:var(--muted)}
+
+/* Inline body links (only inside parcours items and card paragraphs) */
+.parcours-item a:not(.btn),
+.parcours-item .context a,
+.card > p a:not(.btn){
+  color:var(--accent);
+  text-decoration:underline;
+  text-decoration-color:rgba(167,139,250,.45);
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+  transition:text-decoration-color .15s, filter .15s;
+}
+.parcours-item a:not(.btn):hover,
+.parcours-item .context a:hover,
+.card > p a:not(.btn):hover{
+  text-decoration-color:var(--accent);
+  filter:brightness(1.1);
+}
 @media (max-width:768px){
   .parcours-item{grid-template-columns:1fr}
   .parcours-media{aspect-ratio:16/9;max-height:200px}
