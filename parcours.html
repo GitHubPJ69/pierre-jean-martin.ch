@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title
+    data-fr="Mon parcours · Pierre-Jean Martin"
+    data-en="My journey · Pierre-Jean Martin"
+    data-de="Mein Werdegang · Pierre-Jean Martin">
+    Mon parcours · Pierre-Jean Martin
+  </title>
+  <meta name="description"
+    data-attr-content-fr="Le parcours de Pierre-Jean Martin : ingénieur EPFL, enseignant, pompier volontaire, secouriste et voyageur."
+    data-attr-content-en="Pierre-Jean Martin's journey: EPFL engineer, teacher, volunteer firefighter, first responder and traveller."
+    data-attr-content-de="Der Werdegang von Pierre-Jean Martin: EPFL-Ingenieur, Lehrer, freiwilliger Feuerwehrmann, Ersthelfer und Reisender."
+    content="Le parcours de Pierre-Jean Martin : ingénieur EPFL, enseignant, pompier volontaire, secouriste et voyageur." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0c10'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='44' fill='%23a78bfa' font-family='monospace' font-weight='700'%3EPJ%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">PJ</span>
+        <span class="brand-name">Pierre-Jean Martin</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              data-attr-aria-label-fr="Ouvrir le menu"
+              data-attr-aria-label-en="Open menu"
+              data-attr-aria-label-de="Menü öffnen"
+              aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="menu" id="primary-menu">
+        <a href="index.html"
+           data-fr="Accueil" data-en="Home" data-de="Startseite">Accueil</a>
+        <a href="cours.html"
+           data-fr="Cours" data-en="Lessons" data-de="Kurse">Cours</a>
+        <a href="entreprises.html"
+           data-fr="Entreprises" data-en="Companies" data-de="Unternehmen">Entreprises</a>
+        <a href="parcours.html" class="active"
+           data-fr="Parcours" data-en="Journey" data-de="Werdegang">Parcours</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Mon parcours" data-en="My journey" data-de="Mein Werdegang">Mon parcours</span>
+      <h1 style="margin-top:.5rem">
+        <span data-fr="Pas qu'un" data-en="More than" data-de="Mehr als">Pas qu'un</span>
+        <span class="grad"
+              data-fr="profil tech." data-en="a tech profile." data-de="ein Tech-Profil.">profil tech.</span>
+      </h1>
+      <p class="lead" style="max-width:62ch"
+         data-fr="Ingénieur, pédagogue, pompier volontaire, secouriste, voyageur. Chacune de ces expériences forme la personne que je suis aujourd'hui, et la façon dont j'accompagne les élèves et les entreprises qui me font confiance."
+         data-en="Engineer, educator, volunteer firefighter, first responder, traveller. Each of these experiences shapes the person I am today, and how I support the students and companies who trust me."
+         data-de="Ingenieur, Pädagoge, freiwilliger Feuerwehrmann, Ersthelfer, Reisender. Jede dieser Erfahrungen formt den Menschen, der ich heute bin, und wie ich die Schüler und Unternehmen begleite, die mir vertrauen.">
+        Ingénieur, pédagogue, pompier volontaire, secouriste, voyageur. Chacune de ces expériences forme la personne que je suis aujourd'hui, et la façon dont j'accompagne les élèves et les entreprises qui me font confiance.
+      </p>
+    </div>
+  </header>
+
+  <!-- ============ FORMATION ============ -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Formation" data-en="Education" data-de="Ausbildung">Formation</span>
+      <h2 data-fr="Ce que j'ai appris à l'école."
+          data-en="What I learned in school."
+          data-de="Was ich in der Schule gelernt habe.">
+        Ce que j'ai appris à l'école.
+      </h2>
+
+      <div class="grid" style="margin-top:2rem">
+
+        <!-- TODO: confirmer les dates et la spécialisation exacte -->
+        <article class="card parcours-item">
+          <div class="parcours-media">
+            <img src="assets/teaching.svg"
+                 data-attr-alt-fr="EPFL"
+                 data-attr-alt-en="EPFL"
+                 data-attr-alt-de="EPFL"
+                 alt="EPFL">
+          </div>
+          <div class="parcours-content">
+            <span class="parcours-date">20XX · 20XX</span>
+            <h3 data-fr="Ingénieur EPFL, robotique"
+                data-en="EPFL engineer, robotics"
+                data-de="EPFL-Ingenieur, Robotik">
+              Ingénieur EPFL, robotique
+            </h3>
+            <p class="context">École polytechnique fédérale de Lausanne</p>
+            <p data-fr="Spécialisation en robotique, traitement d'image et automatique. Une formation exigeante qui m'a donné le réflexe de raisonner par premiers principes et de coder en pensant production."
+               data-en="Specialisation in robotics, image processing and control. A demanding education that gave me the instinct to reason from first principles and code with production in mind."
+               data-de="Spezialisierung auf Robotik, Bildverarbeitung und Regelungstechnik. Eine anspruchsvolle Ausbildung, die mir den Reflex gegeben hat, von Grundprinzipien aus zu denken und produktionsorientiert zu programmieren.">
+              Spécialisation en robotique, traitement d'image et automatique. Une formation exigeante qui m'a donné le réflexe de raisonner par premiers principes et de coder en pensant production.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENGAGEMENT ============ -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Engagement" data-en="Service" data-de="Engagement">Engagement</span>
+      <h2 data-fr="Quand le code rencontre le terrain."
+          data-en="When code meets the field."
+          data-de="Wenn Code auf die Realität trifft.">
+        Quand le code rencontre le terrain.
+      </h2>
+      <p class="section-lead"
+         data-fr="Les expériences les plus formatrices ne se sont pas passées devant un écran. Ce que j'y ai appris, je le ramène chaque jour dans mes cours et mes missions."
+         data-en="The most formative experiences didn't happen in front of a screen. What I learned there, I bring back into every lesson and mission."
+         data-de="Die prägendsten Erfahrungen fanden nicht vor einem Bildschirm statt. Was ich dort gelernt habe, bringe ich täglich in meine Stunden und Aufträge ein.">
+        Les expériences les plus formatrices ne se sont pas passées devant un écran. Ce que j'y ai appris, je le ramène chaque jour dans mes cours et mes missions.
+      </p>
+
+      <div class="grid" style="margin-top:2rem">
+
+        <!-- TODO: confirmer les dates, la caserne, le canton -->
+        <article class="card parcours-item">
+          <div class="parcours-media">
+            <img src="assets/firefighter.svg"
+                 data-attr-alt-fr="Pompier volontaire"
+                 data-attr-alt-en="Volunteer firefighter"
+                 data-attr-alt-de="Freiwilliger Feuerwehrmann"
+                 alt="Pompier volontaire">
+          </div>
+          <div class="parcours-content">
+            <span class="parcours-date">20XX · 20XX</span>
+            <h3 data-fr="Pompier volontaire"
+                data-en="Volunteer firefighter"
+                data-de="Freiwilliger Feuerwehrmann">
+              Pompier volontaire
+            </h3>
+            <p class="context"
+               data-fr="Caserne TODO, canton TODO"
+               data-en="TODO fire station, canton TODO"
+               data-de="Feuerwehr TODO, Kanton TODO">
+              Caserne TODO, canton TODO
+            </p>
+            <p data-fr="Esprit d'équipe, gestion du stress, capacité à décider sous contrainte. On apprend vite qu'une mission ne se résume pas à un plan : ce qui compte, c'est la lucidité quand tout déraille."
+               data-en="Team spirit, stress management, the ability to decide under pressure. You quickly learn that a mission isn't just a plan: what matters is staying clear-headed when everything goes off-script."
+               data-de="Teamgeist, Stressmanagement, die Fähigkeit, unter Druck zu entscheiden. Man lernt schnell, dass ein Einsatz nicht nur aus einem Plan besteht: Was zählt, ist klare Sicht, wenn alles aus dem Ruder läuft.">
+              Esprit d'équipe, gestion du stress, capacité à décider sous contrainte. On apprend vite qu'une mission ne se résume pas à un plan : ce qui compte, c'est la lucidité quand tout déraille.
+            </p>
+          </div>
+        </article>
+
+        <!-- TODO: confirmer les dates, le rôle, l'organisation -->
+        <article class="card parcours-item">
+          <div class="parcours-media">
+            <img src="assets/rescue.svg"
+                 data-attr-alt-fr="Secouriste"
+                 data-attr-alt-en="First responder"
+                 data-attr-alt-de="Ersthelfer"
+                 alt="Secouriste">
+          </div>
+          <div class="parcours-content">
+            <span class="parcours-date">20XX · 20XX</span>
+            <h3 data-fr="Secouriste"
+                data-en="First responder"
+                data-de="Ersthelfer">
+              Secouriste
+            </h3>
+            <p class="context"
+               data-fr="Organisation TODO, contexte TODO"
+               data-en="TODO organisation, TODO context"
+               data-de="TODO Organisation, TODO Kontext">
+              Organisation TODO, contexte TODO
+            </p>
+            <p data-fr="Premiers secours, gestes qui sauvent, accompagnement des personnes en détresse. Cette expérience m'a appris à écouter avant d'agir, à expliquer simplement dans l'urgence, à rester humain quand la pression monte."
+               data-en="First aid, life-saving gestures, supporting people in distress. This experience taught me to listen before acting, to explain simply under pressure, and to stay human when stakes rise."
+               data-de="Erste Hilfe, lebensrettende Handgriffe, Unterstützung von Menschen in Not. Diese Erfahrung lehrte mich, vor dem Handeln zuzuhören, in der Eile einfach zu erklären und menschlich zu bleiben, wenn der Druck steigt.">
+              Premiers secours, gestes qui sauvent, accompagnement des personnes en détresse. Cette expérience m'a appris à écouter avant d'agir, à expliquer simplement dans l'urgence, à rester humain quand la pression monte.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENSEIGNEMENT ============ -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Enseignement" data-en="Teaching" data-de="Lehrtätigkeit">Enseignement</span>
+      <h2 data-fr="Transmettre, depuis plusieurs années."
+          data-en="Teaching, for several years now."
+          data-de="Unterrichten, seit mehreren Jahren.">
+        Transmettre, depuis plusieurs années.
+      </h2>
+
+      <div class="grid" style="margin-top:2rem">
+
+        <!-- TODO: décrire le premier rôle d'enseignement (où, quand, public) -->
+        <article class="card parcours-item">
+          <div class="parcours-media">
+            <img src="assets/teaching.svg"
+                 data-attr-alt-fr="Enseignement"
+                 data-attr-alt-en="Teaching"
+                 data-attr-alt-de="Unterricht"
+                 alt="Enseignement">
+          </div>
+          <div class="parcours-content">
+            <span class="parcours-date">20XX · 20XX</span>
+            <h3 data-fr="Premier poste d'enseignement"
+                data-en="First teaching role"
+                data-de="Erste Lehrtätigkeit">
+              Premier poste d'enseignement
+            </h3>
+            <p class="context"
+               data-fr="Établissement TODO, matière TODO"
+               data-en="TODO school, TODO subject"
+               data-de="TODO Schule, TODO Fach">
+              Établissement TODO, matière TODO
+            </p>
+            <p data-fr="TODO : raconter ce que tu retiens de cette expérience. Type de public, ce que tu as appris en enseignant."
+               data-en="TODO: share what you took from this experience. Type of audience, what teaching taught you."
+               data-de="TODO: was du aus dieser Erfahrung mitnimmst. Zielgruppe, was das Unterrichten dir beigebracht hat.">
+              TODO : raconter ce que tu retiens de cette expérience. Type de public, ce que tu as appris en enseignant.
+            </p>
+          </div>
+        </article>
+
+        <!-- TODO: décrire les cours particuliers indépendants -->
+        <article class="card parcours-item">
+          <div class="parcours-media">
+            <img src="assets/teaching.svg"
+                 data-attr-alt-fr="Cours particuliers"
+                 data-attr-alt-en="Private lessons"
+                 data-attr-alt-de="Privatunterricht"
+                 alt="Cours particuliers">
+          </div>
+          <div class="parcours-content">
+            <span class="parcours-date"
+                  data-fr="20XX · aujourd'hui"
+                  data-en="20XX · today"
+                  data-de="20XX · heute">20XX · aujourd'hui</span>
+            <h3 data-fr="Cours particuliers indépendant"
+                data-en="Independent private tutoring"
+                data-de="Selbstständiger Privatunterricht">
+              Cours particuliers indépendant
+            </h3>
+            <p class="context"
+               data-fr="Programmation, IA, mathématiques · Suisse romande"
+               data-en="Programming, AI, math · French-speaking Switzerland"
+               data-de="Programmierung, KI, Mathematik · französischsprachige Schweiz">
+              Programmation, IA, mathématiques · Suisse romande
+            </p>
+            <p data-fr="Accompagnement de gymnasiens, étudiants bachelor et reconvertis. Ce que j'aime : voir un déclic après plusieurs séances bloquées, et savoir que cet élève n'aura plus besoin de moi sur ce sujet."
+               data-en="Supporting high-schoolers, bachelor students and career-changers. What I love: seeing a click after several stuck sessions, knowing that student will never need me again on that topic."
+               data-de="Begleitung von Gymnasiasten, Bachelorstudenten und Berufswechslern. Was ich liebe: den Aha-Moment nach mehreren festgefahrenen Sitzungen, das Wissen, dass dieser Schüler mich zu diesem Thema nicht mehr braucht.">
+              Accompagnement de gymnasiens, étudiants bachelor et reconvertis. Ce que j'aime : voir un déclic après plusieurs séances bloquées, et savoir que cet élève n'aura plus besoin de moi sur ce sujet.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOYAGES ============ -->
+  <section>
+    <div class="container">
+      <span class="section-eyebrow"
+            data-fr="Voyages" data-en="Travels" data-de="Reisen">Voyages</span>
+      <h2 data-fr="Ce que les routes m'ont appris."
+          data-en="What the road has taught me."
+          data-de="Was mich das Reisen gelehrt hat.">
+        Ce que les routes m'ont appris.
+      </h2>
+      <p class="section-lead"
+         data-fr="Quelques destinations qui ont compté, par ce qu'elles m'ont fait remettre en question."
+         data-en="A few destinations that mattered, by what they pushed me to question."
+         data-de="Einige Ziele, die zählten, durch das, was sie in mir in Frage stellten.">
+        Quelques destinations qui ont compté, par ce qu'elles m'ont fait remettre en question.
+      </p>
+
+      <div class="grid cols-3" style="margin-top:2rem">
+
+        <!-- TODO: remplacer par une vraie destination (pays, période, ce que tu en retiens) -->
+        <article class="card">
+          <img src="assets/travel.svg"
+               data-attr-alt-fr="Destination 1"
+               data-attr-alt-en="Destination 1"
+               data-attr-alt-de="Reiseziel 1"
+               alt="Destination 1"
+               style="border-radius:var(--radius-sm);margin-bottom:.8rem;aspect-ratio:4/3;object-fit:cover;width:100%">
+          <span class="parcours-date">20XX</span>
+          <h3 data-fr="Destination TODO"
+              data-en="TODO destination"
+              data-de="TODO Reiseziel"
+              style="margin-top:.4rem">
+            Destination TODO
+          </h3>
+          <p class="muted"
+             data-fr="TODO : 2 phrases sur ce que tu en retiens (rencontres, perspective, déclic)."
+             data-en="TODO: 2 sentences on what you took from it (encounters, perspective, click)."
+             data-de="TODO: 2 Sätze darüber, was du mitnimmst (Begegnungen, Perspektive, Aha-Moment).">
+            TODO : 2 phrases sur ce que tu en retiens (rencontres, perspective, déclic).
+          </p>
+        </article>
+
+        <!-- TODO: remplacer par une vraie destination -->
+        <article class="card">
+          <img src="assets/travel.svg"
+               data-attr-alt-fr="Destination 2"
+               data-attr-alt-en="Destination 2"
+               data-attr-alt-de="Reiseziel 2"
+               alt="Destination 2"
+               style="border-radius:var(--radius-sm);margin-bottom:.8rem;aspect-ratio:4/3;object-fit:cover;width:100%">
+          <span class="parcours-date">20XX</span>
+          <h3 data-fr="Destination TODO"
+              data-en="TODO destination"
+              data-de="TODO Reiseziel"
+              style="margin-top:.4rem">
+            Destination TODO
+          </h3>
+          <p class="muted"
+             data-fr="TODO : 2 phrases sur ce que tu en retiens."
+             data-en="TODO: 2 sentences on what you took from it."
+             data-de="TODO: 2 Sätze darüber, was du mitnimmst.">
+            TODO : 2 phrases sur ce que tu en retiens.
+          </p>
+        </article>
+
+        <!-- TODO: remplacer par une vraie destination -->
+        <article class="card">
+          <img src="assets/travel.svg"
+               data-attr-alt-fr="Destination 3"
+               data-attr-alt-en="Destination 3"
+               data-attr-alt-de="Reiseziel 3"
+               alt="Destination 3"
+               style="border-radius:var(--radius-sm);margin-bottom:.8rem;aspect-ratio:4/3;object-fit:cover;width:100%">
+          <span class="parcours-date">20XX</span>
+          <h3 data-fr="Destination TODO"
+              data-en="TODO destination"
+              data-de="TODO Reiseziel"
+              style="margin-top:.4rem">
+            Destination TODO
+          </h3>
+          <p class="muted"
+             data-fr="TODO : 2 phrases sur ce que tu en retiens."
+             data-en="TODO: 2 sentences on what you took from it."
+             data-de="TODO: 2 Sätze darüber, was du mitnimmst.">
+            TODO : 2 phrases sur ce que tu en retiens.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA RETOUR ============ -->
+  <section>
+    <div class="container">
+      <div class="card" style="padding:2rem;text-align:center">
+        <h2 style="margin:0 0 .8rem"
+            data-fr="Envie de discuter ?"
+            data-en="Want to talk?"
+            data-de="Lust auf einen Austausch?">
+          Envie de discuter ?
+        </h2>
+        <p class="muted" style="margin:0 0 1.5rem"
+           data-fr="Pour un cours, une mission ou juste pour échanger sur un projet."
+           data-en="For a lesson, a mission or just to exchange about a project."
+           data-de="Für eine Stunde, einen Auftrag oder einfach zum Austausch über ein Projekt.">
+          Pour un cours, une mission ou juste pour échanger sur un projet.
+        </p>
+        <div class="cta" style="justify-content:center">
+          <a class="btn primary" href="cours.html#reserver">
+            <span data-fr="Prendre un cours" data-en="Book a lesson" data-de="Eine Stunde buchen">Prendre un cours</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="entreprises.html#projet">
+            <span data-fr="Discuter d'un projet" data-en="Discuss a project" data-de="Projekt besprechen">Discuter d'un projet</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-meta">
+          <div class="brand">
+            <span class="brand-logo">PJ</span>
+            <span class="brand-name">Pierre-Jean Martin</span>
+          </div>
+          <span data-fr="Ingénieur · Formateur · Consultant"
+                data-en="Engineer · Educator · Consultant"
+                data-de="Ingenieur · Dozent · Berater">
+            Ingénieur · Formateur · Consultant
+          </span>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/pierre-jean-martin/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15.5H.22V8zm7.55 0h4.37v2.12h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v8.74h-4.56v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1v7.88H7.77V8z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/GitHubPJ69" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.62 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.8.55 4.57-1.53 7.85-5.84 7.85-10.91C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="#" data-email aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          © <span data-year>2026</span> Pierre-Jean Martin ·
+          <span data-fr="Tous droits réservés" data-en="All rights reserved" data-de="Alle Rechte vorbehalten">Tous droits réservés</span>
+        </div>
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

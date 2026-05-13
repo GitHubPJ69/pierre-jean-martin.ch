@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="Portrait placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1f29"/>
+      <stop offset="100%" stop-color="#0b0c10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0b0c10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="480" rx="32" fill="url(#bg)"/>
+  <circle cx="240" cy="200" r="200" fill="url(#glow)"/>
+  <circle cx="240" cy="200" r="92" fill="none" stroke="url(#ring)" stroke-width="3" opacity="0.9"/>
+  <circle cx="240" cy="180" r="48" fill="#a78bfa" opacity="0.85"/>
+  <path d="M 160 320 Q 240 220 320 320 L 320 380 L 160 380 Z" fill="#a78bfa" opacity="0.85"/>
+  <text x="240" y="438" text-anchor="middle" font-family="monospace" font-size="22" font-weight="700" fill="#a78bfa" letter-spacing="0.2em">PHOTO TODO</text>
+</svg>

@@ -19,19 +19,23 @@ Hard rules:
 index.html          ← accueil
 cours.html          ← offre B2C (cours particuliers, 100 CHF/h)
 entreprises.html    ← offre B2B (3 postures: expert / consultant / formateur)
-style.css           ← design system, shared by all 3 pages
-app.js              ← i18n + helpers, shared by all 3 pages
+parcours.html       ← vitrine humaine (formation, engagement, voyages)
+style.css           ← design system, shared by all 4 pages
+app.js              ← i18n + helpers, shared by all 4 pages
+assets/             ← placeholder SVGs to be replaced by real photos (.webp / .jpg)
 CNAME               ← GitHub Pages domain, DO NOT EDIT
 README.md
 ```
 
 No build artifacts, no `dist/`, no generated files. What you see is what's served.
 
+`assets/` contains placeholder SVGs (`portrait.svg`, `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`) with a "TODO" label visible on the image itself. They are intentionally clean dark-themed visuals so the site looks intentional while waiting for real photos. Replace them by keeping the same filenames (drop-in) or by changing the `<img src>` references in the HTML.
+
 ## Architecture
 
 ### Shared header/footer = copy-paste, not templating
 
-There is no templating layer. The `<nav>` block and `<footer>` block are **physically duplicated** across the 3 HTML files. When you change one, change all three. Keep the only structural difference being the `class="active"` on the current page's nav link.
+There is no templating layer. The `<nav>` block and `<footer>` block are **physically duplicated** across the 4 HTML files. When you change one, change all four. Keep the only structural difference being the `class="active"` on the current page's nav link.
 
 ### Trilingual i18n (FR / EN / DE)
 
@@ -85,6 +89,8 @@ No inline styles in the HTML except for occasional one-off `style="padding:…"`
 - **TODO markers** that still need real content:
   - `<!-- TODO: remplacer par une vraie review d'élève -->` in `cours.html` (×4)
   - `<!-- TODO: remplacer par un vrai projet entreprise -->` in `entreprises.html` (×3)
+  - `<!-- TODO: ... -->` throughout `parcours.html` (dates, contexts, story details, real photos)
+  - Placeholder SVGs in `assets/` (`portrait.svg`, `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`) to swap for real photos.
 
 When you replace a TODO, remove the comment.
 
