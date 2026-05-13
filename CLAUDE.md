@@ -83,14 +83,16 @@ No inline styles in the HTML except for occasional one-off `style="padding:…"`
 ## Hard-coded values you'll edit by hand
 
 - **WhatsApp number**: obfuscated in `app.js` inside `injectWhatsapp()`, assembled from string fragments to keep the literal out of HTML source. Format is international (no `+`, no leading `0`). HTML uses `[data-whatsapp]` on `<a>` tags with `href="#"`; `app.js` rewrites the `href` at runtime. To change the number, edit only the fragments array in `injectWhatsapp()`.
-- **LinkedIn**: `https://www.linkedin.com/in/pierre-jean-martin/`, in all 3 footers.
-- **GitHub**: `https://github.com/GitHubPJ69`, in all 3 footers.
+- **LinkedIn**: `https://www.linkedin.com/in/pierre-jean-martin/`, in all 4 footers.
+- **GitHub**: `https://github.com/GitHubPJ69`, in all 4 footers.
 - **Email**: never written literally; only changed inside `injectEmail()` in `app.js` (domain `.ch`).
+- **Superprof**: `https://www.superprof.ch/ingenieur-robotique-epfl-python-experience-eleves-methodo-algorithmique-gymnase.html`. Used as `via Superprof` attribution under each Superprof review in `cours.html` and as the global "Voir mes avis" button. 5 occurrences total in `cours.html`.
+- **Apprentus**: `https://www.apprentus.ch/in/pierre-jean.m`. Same pattern: per-review attribution + global button. 2 occurrences in `cours.html`.
+- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). Other slots in `parcours.html` still use placeholder SVGs (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`).
 - **TODO markers** that still need real content:
-  - `<!-- TODO: remplacer par une vraie review d'élève -->` in `cours.html` (×4)
   - `<!-- TODO: remplacer par un vrai projet entreprise -->` in `entreprises.html` (×3)
   - `<!-- TODO: ... -->` throughout `parcours.html` (dates, contexts, story details, real photos)
-  - Placeholder SVGs in `assets/` (`portrait.svg`, `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`) to swap for real photos.
+  - Placeholder SVGs in `assets/` (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`) to swap for real photos.
 
 When you replace a TODO, remove the comment.
 
