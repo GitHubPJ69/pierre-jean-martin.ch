@@ -29,7 +29,9 @@ README.md
 
 No build artifacts, no `dist/`, no generated files. What you see is what's served.
 
-`assets/` contains placeholder SVGs (`portrait.svg`, `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`) with a "TODO" label visible on the image itself. They are intentionally clean dark-themed visuals so the site looks intentional while waiting for real photos. Replace them by keeping the same filenames (drop-in) or by changing the `<img src>` references in the HTML.
+`assets/` currently holds:
+- `portrait_pj.jpg` — real portrait photo wired into the `index.html` hero.
+- Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`, `4l.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
 
 ## Architecture
 
@@ -78,8 +80,9 @@ On `DOMContentLoaded`:
 3. `setYears()`: fills `[data-year]` with current year.
 4. `bindLangSwitchers()`: wires `.lang-switch button[data-lang]` clicks.
 5. `bindMobileNav()`: wires `.nav-toggle` to toggle `.menu.open` under 768px.
-6. `bindMailtoForms(email)`: wires `[data-form-mailto]` submit → builds `mailto:` with subject from `data-subject-{lang}` and body from `FormData` entries (one `key: value` per line).
-7. `applyLang(detectLang())`: final pass that syncs everything to the persisted/detected language.
+6. `bindFadeUp()`: IntersectionObserver that adds `.in-view` to any `.fade-up` element when it enters the viewport. Gracefully no-ops if IntersectionObserver is missing (adds `.in-view` immediately). Pair with the `.fade-up` CSS rule and the `:nth-child` stagger to get a scroll fade-in. Currently used by the "Mes cours" cards in `cours.html`.
+7. `bindMailtoForms(email)`: wires `[data-form-mailto]` submit → builds `mailto:` with subject from `data-subject-{lang}` and body from `FormData` entries (one `key: value` per line).
+8. `applyLang(detectLang())`: final pass that syncs everything to the persisted/detected language.
 
 When you add new behavior, follow the same IIFE + binder pattern; don't add a second `<script>` tag or a module.
 
@@ -88,6 +91,13 @@ When you add new behavior, follow the same IIFE + binder pattern; don't add a se
 All design tokens are CSS variables in `:root` at the top of `style.css` (`--bg`, `--surface`, `--accent: #a78bfa`, `--font-sans`, `--font-mono`, etc.). **Always use the variables**, never hard-code colors or fonts elsewhere in the file.
 
 Layout primitives reused across pages: `.container`, `.grid.cols-2/3/4`, `.card`, `.btn` / `.btn.primary` / `.btn.ghost` / `.btn.wa`, `.section-eyebrow`, `.badge`, `.chip`, `.checklist`. Breakpoints are mobile-first: anything below 768px collapses grids to one column and switches `.menu` to a dropdown via `.nav-toggle`.
+
+Page-scoped modules (defined in `style.css` but only used on the page in their name):
+- `.parcours-item` / `.parcours-media` / `.parcours-content` / `.parcours-date` (parcours.html — media-left timeline cards).
+- `.course-card` / `.course-icon` / `.course-pitch` / `.course-target` / `.course-footnote` (cours.html "Mes cours" section).
+- `.review` / `.review-source` / `.reviews-platforms` / `.avatar.c1..c6` (cours.html reviews block).
+- `.posture` / `.posture-icon` (entreprises.html).
+- `.fade-up` (scroll-triggered animation, driven by `bindFadeUp` in `app.js`; `nth-child` staggers handled by CSS so you can apply `.fade-up` to siblings without writing any JS).
 
 No inline styles in the HTML except for occasional one-off `style="padding:…"` / `margin-top:…` on layout containers. Don't add inline colors or fonts.
 
@@ -99,11 +109,11 @@ No inline styles in the HTML except for occasional one-off `style="padding:…"`
 - **Email**: never written literally; only changed inside `injectEmail()` in `app.js` (domain `.ch`).
 - **Superprof**: `https://www.superprof.ch/ingenieur-robotique-epfl-python-experience-eleves-methodo-algorithmique-gymnase.html`. Used as `via Superprof` attribution under each Superprof review in `cours.html` and as the global "Voir mes avis" button. 5 occurrences total in `cours.html`.
 - **Apprentus**: `https://www.apprentus.ch/in/pierre-jean.m`. Same pattern: per-review attribution + global button. 2 occurrences in `cours.html`.
-- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). Other slots in `parcours.html` still use placeholder SVGs (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`).
+- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). Other slots in `parcours.html` still use placeholder SVGs (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`, `4l.svg`).
 - **TODO markers** that still need real content:
   - `<!-- TODO: remplacer par un vrai projet entreprise -->` in `entreprises.html` (×3)
-  - `<!-- TODO: ... -->` throughout `parcours.html` (dates, contexts, story details, real photos)
-  - Placeholder SVGs in `assets/` (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`) to swap for real photos.
+  - `<!-- TODO: ... -->` throughout `parcours.html` (a few remaining dates: pompier, secouriste, Europe trip period)
+  - Placeholder SVGs in `assets/` to swap for real photos when available.
 
 When you replace a TODO, remove the comment.
 
