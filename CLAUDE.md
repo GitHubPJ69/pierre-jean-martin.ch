@@ -31,7 +31,8 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 
 `assets/` currently holds:
 - `portrait_pj.jpg` — real portrait photo wired into the `index.html` hero.
-- `pj_logo.png` — stylized PJ avatar on violet background. Used as the round brand badge (`.brand-logo` in every header/footer) and as the browser favicon (`<link rel="icon">` in all 4 HTML files). Already round-ready, so `.brand-logo` just clips it with `border-radius:50%` + `object-fit:cover`.
+- `pj_logo.png` — stylized PJ avatar on violet background, 256×256. Used as the round brand badge (`.brand-logo` in every header/footer). Already round-ready, so `.brand-logo` just clips it with `border-radius:50%` + `object-fit:cover`.
+- `pj_favicon.png` — same image downscaled to 96×96 for use as the browser favicon (`<link rel="icon">` in all 4 HTML files). Kept separate from `pj_logo.png` so the favicon stays under ~25 KB.
 - Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`, `4l.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
 
 ## Architecture
