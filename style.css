@@ -484,3 +484,42 @@ footer{
   *{transition:none!important;animation:none!important}
   html{scroll-behavior:auto}
 }
+
+/* ============================================================
+   Course type cards (cours.html · "Mes cours" section)
+   ============================================================ */
+.course-card{
+  display:flex;flex-direction:column;gap:.85rem;
+  padding:1.6rem;
+}
+.course-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:grid;place-items:center;
+  background:var(--accent-soft);color:var(--accent);
+  border:1px solid rgba(167,139,250,.3);
+}
+.course-icon svg{width:24px;height:24px}
+.course-card h3{margin:0;font-size:1.2rem;letter-spacing:-.01em}
+.course-pitch{margin:0;color:var(--text);font-size:1rem}
+.course-card .checklist{margin:.2rem 0}
+.course-target{
+  margin:.4rem 0 0;font-size:.85rem;
+  color:var(--muted);font-family:var(--font-mono);
+  letter-spacing:.02em;
+}
+.course-footnote{
+  margin:2rem 0 0;font-size:.86rem;
+  color:var(--muted-2);font-style:italic;
+  text-align:center;
+}
+
+/* Scroll fade-in (used by .fade-up, triggered by app.js IntersectionObserver) */
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.fade-up.in-view{opacity:1;transform:none}
+.grid > .fade-up:nth-child(1).in-view{transition-delay:0s}
+.grid > .fade-up:nth-child(2).in-view{transition-delay:.08s}
+.grid > .fade-up:nth-child(3).in-view{transition-delay:.16s}
+.grid > .fade-up:nth-child(4).in-view{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  .fade-up{opacity:1;transform:none}
+}

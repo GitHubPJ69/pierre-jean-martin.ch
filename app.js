@@ -113,6 +113,25 @@
     });
   }
 
+  // -------- Scroll fade-up --------
+  function bindFadeUp(){
+    const els = document.querySelectorAll(".fade-up");
+    if (!els.length) return;
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(el => el.classList.add("in-view"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting){
+          e.target.classList.add("in-view");
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.1 });
+    els.forEach(el => io.observe(el));
+  }
+
   // -------- Mobile nav toggle --------
   function bindMobileNav(){
     const toggle = document.querySelector(".nav-toggle");
@@ -135,6 +154,7 @@
     setYears();
     bindLangSwitchers();
     bindMobileNav();
+    bindFadeUp();
     bindMailtoForms(email);
     applyLang(detectLang());
   });
