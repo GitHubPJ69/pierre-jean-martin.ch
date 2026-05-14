@@ -35,7 +35,8 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 - `pj_favicon.png` — same image downscaled to 96×96 for use as the browser favicon (`<link rel="icon">` in all 4 HTML files). Kept separate from `pj_logo.png` so the favicon stays under ~25 KB.
 - `4Ltrophy.jpg` — real photo of the orange 4L crossing the Moroccan desert, 1820×1365 (4:3, cropped to match the desktop `.parcours-media` frame exactly). Wired into the "4L Trophy" timeline card in `parcours.html`.
 - `pj_parachute.jpg` — real photo of a freefall skydive (1331×676, ratio ~2:1, JPG q85). Wired into the "Parachutisme" timeline card in the engagement section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops the sides on desktop — the skydiver is centered so the crop stays safe.
-- Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
+- `pj_mix_pompier.jpg` — diptych composite (1800×1200, 3:2, JPG q85) made from two portrait photos: PJ in turnout gear (left, locker room) and PJ on a breathing-apparatus drill (right, concrete corner). Wired into the "Pompier volontaire" card in `parcours.html`. The 3:2 ratio is intentional so the desktop 4:3 crop only eats ~5% of each outer edge, both subjects stay visible.
+- Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `rescue.svg`, `travel.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
 
 ## Architecture
 
@@ -113,10 +114,10 @@ No inline styles in the HTML except for occasional one-off `style="padding:…"`
 - **Email**: never written literally; only changed inside `injectEmail()` in `app.js` (domain `.ch`).
 - **Superprof**: `https://www.superprof.ch/ingenieur-robotique-epfl-python-experience-eleves-methodo-algorithmique-gymnase.html`. Used as `via Superprof` attribution under each Superprof review in `cours.html` and as the global "Voir mes avis" button. 5 occurrences total in `cours.html`.
 - **Apprentus**: `https://www.apprentus.ch/in/pierre-jean.m`. Same pattern: per-review attribution + global button. 2 occurrences in `cours.html`.
-- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). 4L Trophy slot wired to `assets/4Ltrophy.jpg`. Other `parcours.html` slots still use placeholder SVGs (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`).
+- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). Real photos also wired in `parcours.html`: `assets/4Ltrophy.jpg` (4L Trophy), `assets/pj_parachute.jpg` (Parachutisme), `assets/pj_mix_pompier.jpg` (Pompier volontaire). Remaining slots still use placeholder SVGs (`teaching.svg`, `rescue.svg`, `travel.svg`).
 - **TODO markers** that still need real content:
   - `<!-- TODO: remplacer par un vrai projet entreprise -->` in `entreprises.html` (×3)
-  - `<!-- TODO: ... -->` throughout `parcours.html` (a few remaining dates: pompier, secouriste, Europe trip period)
+  - `<!-- TODO: ... -->` throughout `parcours.html` (a few remaining dates: secouriste, Europe trip period)
   - Placeholder SVGs in `assets/` to swap for real photos when available.
 
 When you replace a TODO, remove the comment.
