@@ -33,7 +33,8 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 - `portrait_pj.jpg` — real portrait photo wired into the `index.html` hero.
 - `pj_logo.png` — stylized PJ avatar on violet background, 256×256. Used as the round brand badge (`.brand-logo` in every header/footer). Already round-ready, so `.brand-logo` just clips it with `border-radius:50%` + `object-fit:cover`.
 - `pj_favicon.png` — same image downscaled to 96×96 for use as the browser favicon (`<link rel="icon">` in all 4 HTML files). Kept separate from `pj_logo.png` so the favicon stays under ~25 KB.
-- Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`, `4l.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
+- `4Ltrophy.jpg` — real photo of the orange 4L crossing the Moroccan desert, 1820×1365 (4:3, cropped to match the desktop `.parcours-media` frame exactly). Wired into the "4L Trophy" timeline card in `parcours.html`.
+- Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
 
 ## Architecture
 
@@ -111,7 +112,7 @@ No inline styles in the HTML except for occasional one-off `style="padding:…"`
 - **Email**: never written literally; only changed inside `injectEmail()` in `app.js` (domain `.ch`).
 - **Superprof**: `https://www.superprof.ch/ingenieur-robotique-epfl-python-experience-eleves-methodo-algorithmique-gymnase.html`. Used as `via Superprof` attribution under each Superprof review in `cours.html` and as the global "Voir mes avis" button. 5 occurrences total in `cours.html`.
 - **Apprentus**: `https://www.apprentus.ch/in/pierre-jean.m`. Same pattern: per-review attribution + global button. 2 occurrences in `cours.html`.
-- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). Other slots in `parcours.html` still use placeholder SVGs (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`, `4l.svg`).
+- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). 4L Trophy slot wired to `assets/4Ltrophy.jpg`. Other `parcours.html` slots still use placeholder SVGs (`teaching.svg`, `firefighter.svg`, `rescue.svg`, `travel.svg`).
 - **TODO markers** that still need real content:
   - `<!-- TODO: remplacer par un vrai projet entreprise -->` in `entreprises.html` (×3)
   - `<!-- TODO: ... -->` throughout `parcours.html` (a few remaining dates: pompier, secouriste, Europe trip period)
