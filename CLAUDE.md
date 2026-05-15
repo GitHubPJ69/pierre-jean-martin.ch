@@ -19,7 +19,7 @@ Hard rules:
 index.html          ← accueil
 cours.html          ← offre B2C (cours particuliers, 100 CHF/h)
 entreprises.html    ← offre B2B (3 postures: expert / consultant / formateur)
-parcours.html       ← vitrine humaine (formation, engagement, voyages)
+parcours.html       ← vitrine humaine (parcours, enseignement, projets)
 style.css           ← design system, shared by all 4 pages
 app.js              ← i18n + helpers, shared by all 4 pages
 assets/             ← placeholder SVGs to be replaced by real photos (.webp / .jpg)
@@ -33,10 +33,10 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 - `portrait_pj.jpg` — real portrait photo wired into the `index.html` hero.
 - `pj_logo.png` — stylized PJ avatar on violet background, 256×256. Used as the round brand badge (`.brand-logo` in every header/footer). Already round-ready, so `.brand-logo` just clips it with `border-radius:50%` + `object-fit:cover`.
 - `pj_favicon.png` — same image downscaled to 96×96 for use as the browser favicon (`<link rel="icon">` in all 4 HTML files). Kept separate from `pj_logo.png` so the favicon stays under ~25 KB.
-- `4Ltrophy.jpg` — real photo of the orange 4L crossing the Moroccan desert, 1820×1365 (4:3, cropped to match the desktop `.parcours-media` frame exactly). Wired into the "4L Trophy" timeline card in `parcours.html`.
-- `pj_parachute.jpg` — real photo of a freefall skydive (1331×676, ratio ~2:1, JPG q85). Wired into the "Parachutisme" timeline card in the engagement section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops the sides on desktop — the skydiver is centered so the crop stays safe.
+- `4Ltrophy.jpg` — real photo of the orange 4L crossing the Moroccan desert, 1820×1365 (4:3, cropped to match the desktop `.parcours-media` frame exactly). Wired into the "4L Trophy" stacked card in the Projets section of `parcours.html`.
+- `pj_parachute.jpg` — real photo of a freefall skydive (1331×676, ratio ~2:1, JPG q85). Wired into the "Parachutisme" timeline card in the Parcours section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops the sides on desktop — the skydiver is centered so the crop stays safe.
 - `pj_pompier_paysage.jpeg` — real photo of PJ in turnout gear at the SDIS Chamberonne locker room (1500×1125, exact 4:3, JPG). Wired into the "Pompier volontaire" card in `parcours.html`. Already matches the desktop frame ratio so `object-fit:cover` does no cropping on desktop.
-- `pj_diplome.jpeg` — real photo of PJ holding his EPFL Master's diploma in front of the iconic red EPFL campus sculpture (2000×922, ratio ~2.17, JPG). Wired into the "Ingénieur EPFL" card in the Formation section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops ~10% on each side — central column + subject stay visible.
+- `pj_diplome.jpeg` — real photo of PJ holding his EPFL Master's diploma in front of the iconic red EPFL campus sculpture (1354×922, ratio ~1.47, JPG). Wired into the "Ingénieur EPFL, robotique" card at the top of the Parcours section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops ~5% on each side.
 - Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `rescue.svg`, `travel.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
 
 ## Architecture
