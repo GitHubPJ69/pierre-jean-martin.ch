@@ -33,11 +33,15 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 - `portrait_pj.jpg` — real portrait photo wired into the `index.html` hero.
 - `pj_logo.png` — stylized PJ avatar on violet background, 256×256. Used as the round brand badge (`.brand-logo` in every header/footer). Already round-ready, so `.brand-logo` just clips it with `border-radius:50%` + `object-fit:cover`.
 - `pj_favicon.png` — same image downscaled to 96×96 for use as the browser favicon (`<link rel="icon">` in all 4 HTML files). Kept separate from `pj_logo.png` so the favicon stays under ~25 KB.
-- `4Ltrophy.jpg` — real photo of the orange 4L crossing the Moroccan desert, 1820×1365 (4:3, cropped to match the desktop `.parcours-media` frame exactly). Wired into the "4L Trophy" stacked card in the Projets section of `parcours.html`.
+- `4Ltrophy.jpg` — real photo of the orange 4L crossing the Moroccan desert, 1820×1365 (4:3, cropped to match the desktop `.parcours-media` frame exactly). Wired into the "4L Trophy" timeline card in the Projets section of `parcours.html`.
 - `pj_parachute.jpg` — real photo of a freefall skydive (1331×676, ratio ~2:1, JPG q85). Wired into the "Parachutisme" timeline card in the Parcours section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops the sides on desktop — the skydiver is centered so the crop stays safe.
 - `pj_pompier_paysage.jpeg` — real photo of PJ in turnout gear at the SDIS Chamberonne locker room (1500×1125, exact 4:3, JPG). Wired into the "Pompier volontaire" card in `parcours.html`. Already matches the desktop frame ratio so `object-fit:cover` does no cropping on desktop.
 - `pj_diplome.jpeg` — real photo of PJ holding his EPFL Master's diploma in front of the iconic red EPFL campus sculpture (1354×922, ratio ~1.47, JPG). Wired into the "Ingénieur EPFL, robotique" card at the top of the Parcours section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops ~5% on each side.
-- Placeholder SVGs with a "TODO" label baked into the image: `teaching.svg`, `rescue.svg`, `travel.svg`. Used across `parcours.html`. Dark-themed by design, so the site looks intentional while waiting for real photos. Replace by keeping the same filename (drop-in) or by updating the `<img src>` references.
+- `secouriste_EPFL.png` — EPFL Secouriste First Aid logo (217×233, ~7 KB). Wired into the "Secouriste" card in the Parcours section of `parcours.html`. Square logo on white background, displayed via the `.parcours-media.logo` variant (white bg + `object-fit:contain`).
+- `Logo_EPFL_2019.svg.png` — official EPFL logo (1280×372, ~5 KB), red on white, panoramic. Wired into the "Assistant étudiant EPFL" card in the Enseignement section. Uses `.parcours-media.logo` (logo displayed in full via `object-fit:contain`, not cropped).
+- `gymnase_etoy_logo.png` — Gymnase d'Étoy logo (788×230, ~53 KB), black wordmark on transparent background. Wired into the "Professeur Gymnase d'Étoy" card. Uses `.parcours-media.logo` (white bg + contain) so the black wordmark is readable.
+- `cours_maths_physique_prog.jpg` — photo-like illustration of math/physics/programming icons on dark blue background (1200×614, ~54 KB JPG q85). Wired into the "Cours particuliers" card in the Enseignement section. Wider than 4:3 so cropped ~15% on each side via `object-fit:cover` — central icons stay visible.
+- Placeholder SVG with a "TODO" label baked into the image: `travel.svg`. Still used in 3 Projets cards (Inde Vigyan Ashram, Vietnam Hô Chi Minh, Europe 20 pays) awaiting real photos. Dark-themed by design.
 
 ## Architecture
 
@@ -99,7 +103,7 @@ All design tokens are CSS variables in `:root` at the top of `style.css` (`--bg`
 Layout primitives reused across pages: `.container`, `.grid.cols-2/3/4`, `.card`, `.btn` / `.btn.primary` / `.btn.ghost` / `.btn.wa`, `.section-eyebrow`, `.badge`, `.chip`, `.checklist`. Breakpoints are mobile-first: anything below 768px collapses grids to one column and switches `.menu` to a dropdown via `.nav-toggle`.
 
 Page-scoped modules (defined in `style.css` but only used on the page in their name):
-- `.parcours-item` / `.parcours-media` / `.parcours-content` / `.parcours-date` (parcours.html — media-left timeline cards).
+- `.parcours-item` / `.parcours-media` / `.parcours-content` / `.parcours-date` (parcours.html — media-left timeline cards). For logo images that shouldn't be cropped, add the `logo` modifier on the media wrapper (`<div class="parcours-media logo">`): switches to white bg + `object-fit:contain` + padding, so panoramic logos like EPFL display in full instead of being chopped by `cover`.
 - `.course-card` / `.course-icon` / `.course-pitch` / `.course-target` / `.course-footnote` (cours.html "Mes cours" section).
 - `.review` / `.review-source` / `.reviews-platforms` / `.avatar.c1..c6` (cours.html reviews block).
 - `.posture` / `.posture-icon` (entreprises.html).
@@ -115,11 +119,11 @@ No inline styles in the HTML except for occasional one-off `style="padding:…"`
 - **Email**: never written literally; only changed inside `injectEmail()` in `app.js` (domain `.ch`).
 - **Superprof**: `https://www.superprof.ch/ingenieur-robotique-epfl-python-experience-eleves-methodo-algorithmique-gymnase.html`. Used as `via Superprof` attribution under each Superprof review in `cours.html` and as the global "Voir mes avis" button. 5 occurrences total in `cours.html`.
 - **Apprentus**: `https://www.apprentus.ch/in/pierre-jean.m`. Same pattern: per-review attribution + global button. 2 occurrences in `cours.html`.
-- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). Real photos also wired in `parcours.html`: `assets/4Ltrophy.jpg` (4L Trophy), `assets/pj_parachute.jpg` (Parachutisme), `assets/pj_pompier_paysage.jpeg` (Pompier volontaire), `assets/pj_diplome.jpeg` (Ingénieur EPFL). Remaining slots still use placeholder SVGs (`teaching.svg`, `rescue.svg`, `travel.svg`).
+- **Portrait photo**: `assets/portrait_pj.jpg` (used in `index.html` hero). Real photos and logos wired in `parcours.html`: `pj_diplome.jpeg` (Ingénieur EPFL), `pj_pompier_paysage.jpeg` (Pompier), `secouriste_EPFL.png` (Secouriste), `pj_parachute.jpg` (Parachutisme), `Logo_EPFL_2019.svg.png` (Assistant EPFL), `cours_maths_physique_prog.jpg` (Cours particuliers), `gymnase_etoy_logo.png` (Gymnase Étoy), `4Ltrophy.jpg` (4L Trophy). Only `travel.svg` placeholder remains, in 3 Projets cards.
 - **TODO markers** that still need real content:
   - `<!-- TODO: remplacer par un vrai projet entreprise -->` in `entreprises.html` (×3)
-  - `<!-- TODO: ... -->` throughout `parcours.html` (a few remaining dates: secouriste, Europe trip period)
-  - Placeholder SVGs in `assets/` to swap for real photos when available.
+  - `<!-- TODO: ... -->` in `parcours.html`: Europe trip period date.
+  - `travel.svg` placeholder in 3 Projets cards (Inde, Vietnam, Europe) to swap for real photos.
 
 When you replace a TODO, remove the comment.
 
