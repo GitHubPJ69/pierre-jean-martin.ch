@@ -10,7 +10,7 @@ Hard rules:
 - **Do not touch `CNAME`**: it pins the GitHub Pages custom domain.
 - **Do not introduce a build step or `package.json`.** Every file must be runnable as-is by opening it in a browser.
 - **Only two Google Fonts**: `Space Grotesk` and `JetBrains Mono`. Don't add Inter, Roboto, system-ui-only fallbacks for body, etc.
-- **No backend, no analytics, no third-party JS.** Forms use `mailto:` only (see `app.js`).
+- **No backend, no third-party JS except GoatCounter for privacy-friendly, cookie-free analytics.** Forms use `mailto:` only (see `app.js`).
 - **Never put the email address as a literal string in HTML.** It's assembled at runtime in `app.js` (`['contact','pierre-jean-martin.ch'].join('@')`) and injected into `[data-email]` elements.
 
 ## File layout
