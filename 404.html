@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title
+    data-fr="Page non trouvée · Pierre-Jean Martin"
+    data-en="Page not found · Pierre-Jean Martin"
+    data-de="Seite nicht gefunden · Pierre-Jean Martin">
+    Page non trouvée · Pierre-Jean Martin
+  </title>
+  <meta name="description"
+    data-attr-content-fr="Cette page n'existe pas ou plus. Retour à l'accueil de pierre-jean-martin.ch."
+    data-attr-content-en="This page does not exist or has been moved. Back to the pierre-jean-martin.ch home page."
+    data-attr-content-de="Diese Seite existiert nicht oder wurde verschoben. Zurück zur Startseite von pierre-jean-martin.ch."
+    content="Cette page n'existe pas ou plus. Retour à l'accueil de pierre-jean-martin.ch." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="assets/pj_favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img class="brand-logo" src="assets/pj_logo.png" alt="" />
+        <span class="brand-name">Pierre-Jean Martin</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false"
+              data-attr-aria-label-fr="Ouvrir le menu"
+              data-attr-aria-label-en="Open menu"
+              data-attr-aria-label-de="Menü öffnen"
+              aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="menu" id="primary-menu">
+        <a href="index.html"
+           data-fr="Accueil" data-en="Home" data-de="Startseite">Accueil</a>
+        <a href="cours.html"
+           data-fr="Cours" data-en="Lessons" data-de="Kurse">Cours</a>
+        <a href="entreprises.html"
+           data-fr="Entreprises" data-en="Companies" data-de="Unternehmen">Entreprises</a>
+        <a href="parcours.html"
+           data-fr="Parcours" data-en="Journey" data-de="Werdegang">Parcours</a>
+        <a href="index.html#contact"
+           data-fr="Contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ 404 ============ -->
+  <main>
+    <section style="padding:6rem 0 4rem; text-align:center;">
+      <div class="container">
+        <span class="section-eyebrow">404</span>
+        <h1 data-fr="Page non trouvée."
+            data-en="Page not found."
+            data-de="Seite nicht gefunden.">
+          Page non trouvée.
+        </h1>
+        <p class="section-lead"
+           data-fr="Cette adresse n'existe pas ou plus. Ce n'est pas grave, on vous remet sur la bonne voie."
+           data-en="This URL does not exist or has been moved. No worries, here is the way back."
+           data-de="Diese Adresse existiert nicht oder wurde verschoben. Kein Problem, hier geht es zurück.">
+          Cette adresse n'existe pas ou plus. Ce n'est pas grave, on vous remet sur la bonne voie.
+        </p>
+        <div class="cta" style="justify-content:center; margin-top:1.5rem;">
+          <a class="btn primary" href="index.html">
+            <span data-fr="Retour à l'accueil"
+                  data-en="Back to home"
+                  data-de="Zur Startseite">Retour à l'accueil</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn" href="cours.html">
+            <span data-fr="Voir les cours"
+                  data-en="See lessons"
+                  data-de="Kurse ansehen">Voir les cours</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-meta">
+          <div class="brand">
+            <img class="brand-logo" src="assets/pj_logo.png" alt="" />
+            <span class="brand-name">Pierre-Jean Martin</span>
+          </div>
+          <span data-fr="Ingénieur · Formateur · Consultant"
+                data-en="Engineer · Educator · Consultant"
+                data-de="Ingenieur · Dozent · Berater">
+            Ingénieur · Formateur · Consultant
+          </span>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/pierre-jean-martin/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15.5H.22V8zm7.55 0h4.37v2.12h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.48 3.04 5.48 7v8.74h-4.56v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1v7.88H7.77V8z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/GitHubPJ69" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.62 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.2c0 .31.21.66.8.55 4.57-1.53 7.85-5.84 7.85-10.91C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="#" data-email aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          © <span data-year>2026</span> Pierre-Jean Martin ·
+          <span data-fr="Tous droits réservés" data-en="All rights reserved" data-de="Alle Rechte vorbehalten">Tous droits réservés</span>
+        </div>
+        <div class="lang-switch" role="group"
+             data-attr-aria-label-fr="Choix de la langue"
+             data-attr-aria-label-en="Language selector"
+             data-attr-aria-label-de="Sprachauswahl"
+             aria-label="Choix de la langue">
+          <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script data-goatcounter="https://pierrejeanmartin.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
