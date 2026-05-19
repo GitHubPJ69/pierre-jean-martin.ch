@@ -151,3 +151,12 @@ Conventions:
 - Commits carry the `Co-Authored-By:` trailer when Claude Code participates, both for traceability and to farm the GitHub Pair Extraordinaire achievement (10 co-authored merged PRs for the x2 tier).
 
 Commit prefixes used in this repo: `feat:`, `fix:`, `chore:`, `docs:`, `style:`, `content:`. Local git identity is configured in `.git/config` (not global).
+
+## Monitoring and analytics dashboards
+
+External dashboards to check periodically. Bookmarks are nice in the browser; this section is the canonical reference so future sessions know where to look.
+
+- **GoatCounter** (privacy-friendly, cookie-free traffic analytics): https://pierrejeanmartin.goatcounter.com/ — daily/weekly visits, top pages, referrers, countries. Public-readable by default. Tracking script is wired in the footer of all 4 pages.
+- **Google Search Console** (SEO, indexing, sitemap): https://search.google.com/search-console — property `https://pierre-jean-martin.ch/` (URL prefix). Ownership verified via the `google77d53b16f40f54d2.html` file at the repo root, which must stay in place to remain verified. Sitemap `sitemap.xml` is submitted. Useful tabs: Performance (queries, clicks, impressions), Pages (indexing status), Sitemaps, URL inspection.
+
+Cadence: GoatCounter is interesting weekly. GSC has very little signal in the first 30 days and is most useful monthly thereafter.
