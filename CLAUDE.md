@@ -140,4 +140,14 @@ There are no commands to run: no build, no lint, no tests.
 - **Responsive check**: DevTools at 375 / 768 / 1280.
 - **Deploy**: `git push origin main`. GitHub Pages picks it up; live at `https://pierre-jean-martin.ch` within ~1 min.
 
-Commit prefixes used in this repo: `feat:`, `fix:`, `style:`, `content:`. Local git identity is configured in `.git/config` (not global).
+### PR-first workflow
+
+Non-trivial changes go through a pull request, not a direct push to `main`. "Non-trivial" means: new features, refactors, new assets, anything touching multiple files, anything that could break the live site, anything worth a written changelog entry. One-line typo fixes can still be pushed directly.
+
+Conventions:
+- Branch prefix matches the commit prefix: `feat/issue-<n>-<slug>`, `chore/...`, `fix/...`, `docs/...`.
+- PRs are squash-merged with `--delete-branch` (one clean commit per PR on `main`).
+- Reference `Closes #<n>` in the PR body when it fully resolves an issue.
+- Commits carry the `Co-Authored-By:` trailer when Claude Code participates, both for traceability and to farm the GitHub Pair Extraordinaire achievement (10 co-authored merged PRs for the x2 tier).
+
+Commit prefixes used in this repo: `feat:`, `fix:`, `chore:`, `docs:`, `style:`, `content:`. Local git identity is configured in `.git/config` (not global).
