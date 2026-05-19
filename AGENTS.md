@@ -147,6 +147,7 @@ When you replace a TODO, remove the comment.
 - No em-dashes (U+2014) anywhere in the codebase. Use comma, colon, or split into two sentences. Use `·` (middle dot) for label/brand separators.
 - FR text uses non-breaking spaces before `:`, `;`, `?`, `!` where appropriate.
 - **Asset filenames in `assets/` are kebab-case lowercase.** Use `.jpg`, never `.jpeg`. PJ-owned assets use the `pj-` prefix (e.g. `pj-portrait.jpg`, `pj-logo.png`, `pj-diplome.jpg`). Third-party institution assets use the institution slug as prefix (`epfl-logo.png`, `epfl-secouriste.png`, `gymnase-etoy-logo.png`). One word per dash; never mix underscores and dashes.
+- **No inclusive writing forms in French copy.** Avoid `étudiant·es`, `candidat·es`, `auteur·rice`, the middle-dot suffix style in general. Reach for a neutral noun instead (`élèves`, `participants`, `personnes en reconversion`, `équipes`). Reasons: it breaks reading flow for a chunk of the Swiss French audience (including parents who are decision-makers for younger students), the site already uses the middle-dot as a brand-style separator, and mixing both meanings is visually confusing. EN and DE copy is unaffected (the convention doesn't exist there).
 
 ## Workflow
 
