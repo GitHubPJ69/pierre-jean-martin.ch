@@ -49,6 +49,16 @@ body{
   overflow-x:hidden;
 }
 
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:radial-gradient(600px at var(--mouse-x,50%) var(--mouse-y,50%),
+    rgba(167,139,250,.10),transparent 80%);
+  pointer-events:none;
+  z-index:0;
+}
+
 a{color:inherit;text-decoration:none}
 a:hover{color:var(--accent)}
 

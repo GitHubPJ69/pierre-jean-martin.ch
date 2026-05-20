@@ -147,6 +147,15 @@
     }));
   }
 
+  // -------- Spotlight cursor --------
+  function bindSpotlight(){
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    document.addEventListener("mousemove", e => {
+      document.documentElement.style.setProperty("--mouse-x", e.clientX + "px");
+      document.documentElement.style.setProperty("--mouse-y", e.clientY + "px");
+    });
+  }
+
   // -------- Boot --------
   document.addEventListener("DOMContentLoaded", () => {
     const email = injectEmail();
@@ -155,6 +164,7 @@
     bindLangSwitchers();
     bindMobileNav();
     bindFadeUp();
+    bindSpotlight();
     bindMailtoForms(email);
     applyLang(detectLang());
   });
