@@ -167,7 +167,7 @@ Conventions:
 - Reference `Closes #<n>` in the PR body when it fully resolves an issue.
 - Commits carry a `Co-Authored-By:` trailer whenever an AI coding agent participates (Claude Code, Codex, etc.), both for traceability and to farm GitHub's Pair Extraordinaire achievement tiers.
 
-Commit prefixes used in this repo: `feat:`, `fix:`, `chore:`, `docs:`, `style:`, `content:`. Local git identity is configured in `.git/config` (not global).
+Commit and PR title prefixes used in this repo: `feat:`, `fix:`, `chore:`, `docs:`, `style:`, `content:`. The PR title becomes the squash-merge commit message on `main`, so treat it with the same care — no vague titles like `fix: stuff`. Branch prefix matches the commit prefix: `feat/issue-<n>-<slug>`, `chore/...`, `fix/...`, `docs/...`. Local git identity is configured in `.git/config` (not global).
 
 ## Monitoring and analytics dashboards
 
