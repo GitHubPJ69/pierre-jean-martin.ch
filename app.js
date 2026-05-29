@@ -7,6 +7,8 @@
   const LANGS = ["fr","en","de"];
   const STORAGE_KEY = "pjm.lang";
 
+  let twReset = null;
+
   // -------- i18n --------
   function detectLang(){
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -54,6 +56,7 @@
     });
 
     localStorage.setItem(STORAGE_KEY, lang);
+    if (twReset) twReset(lang);
   }
 
   function bindLangSwitchers(){
@@ -147,6 +150,61 @@
     }));
   }
 
+  // -------- Typewriter --------
+  function bindTypewriter(){
+    const el = document.getElementById("typewriter-word");
+    if (!el) return null;
+
+    const WORDS = {
+      fr: ["Construire.", "Transmettre.", "Innover."],
+      en: ["Build.", "Teach.", "Innovate."],
+      de: ["Bauen.", "Lehren.", "Innovieren."]
+    };
+
+    let timer = null;
+    let wordIdx = 0;
+    let charIdx = 0;
+    let deleting = false;
+    let lang = "fr";
+
+    function tick(){
+      const words = WORDS[lang] || WORDS.fr;
+      const word = words[wordIdx % words.length];
+      if (!deleting){
+        charIdx++;
+        el.textContent = word.slice(0, charIdx);
+        if (charIdx >= word.length){
+          timer = setTimeout(() => { deleting = true; tick(); }, 1800);
+          return;
+        }
+      } else {
+        charIdx--;
+        el.textContent = word.slice(0, charIdx);
+        if (charIdx <= 0){
+          charIdx = 0;
+          deleting = false;
+          wordIdx++;
+          timer = setTimeout(tick, 350);
+          return;
+        }
+      }
+      timer = setTimeout(tick, deleting ? 45 : 75);
+    }
+
+    function reset(newLang){
+      clearTimeout(timer);
+      lang = LANGS.includes(newLang) ? newLang : "fr";
+      wordIdx = 0;
+      charIdx = 0;
+      deleting = false;
+      el.textContent = "";
+      timer = setTimeout(tick, 400);
+    }
+
+    timer = setTimeout(tick, 700);
+    return reset;
+  }
+
   // -------- Spotlight cursor --------
   function bindSpotlight(){
     if (!window.matchMedia("(pointer: fine)").matches) return;
@@ -166,6 +224,7 @@
     bindFadeUp();
     bindSpotlight();
     bindMailtoForms(email);
+    twReset = bindTypewriter();
     applyLang(detectLang());
   });
 })();
