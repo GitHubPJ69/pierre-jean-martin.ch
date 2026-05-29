@@ -203,6 +203,14 @@ p{margin:0 0 1rem}
   background:linear-gradient(135deg,var(--accent),#60a5fa);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
+@keyframes tw-blink{0%,100%{opacity:1}50%{opacity:0}}
+.tw-cursor{
+  color:var(--accent);
+  animation:tw-blink .7s step-end infinite;
+  font-weight:400;
+  margin-left:1px;
+  display:inline;
+}
 .hero .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:55ch;margin:0 0 1.8rem}
 .cta{display:flex;gap:.8rem;flex-wrap:wrap}
 
