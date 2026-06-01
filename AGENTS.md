@@ -44,6 +44,9 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 - `pj-pompier-paysage.jpg` — real photo of PJ in turnout gear at the SDIS Chamberonne locker room (1500×1125, exact 4:3, JPG). Wired into the "Pompier volontaire" card in `parcours.html`. Already matches the desktop frame ratio so `object-fit:cover` does no cropping on desktop.
 - `pj-diplome.jpg` — real photo of PJ holding his EPFL Master's diploma in front of the iconic red EPFL campus sculpture (1354×922, ratio ~1.47, JPG). Wired into the "Ingénieur EPFL, robotique" card at the top of the Parcours section of `parcours.html`. Wider than 4:3, so `object-fit:cover` crops ~5% on each side.
 - `cours-maths-physique-prog.jpg` — photo-like illustration of math/physics/programming icons on dark blue background (1200×614, ~54 KB JPG q85). Wired into the "Cours particuliers" card in the Enseignement section. Wider than 4:3 so cropped ~15% on each side via `object-fit:cover`, central icons stay visible.
+- `pj-inde-vigyan-ashram.jpg` — photo of PJ in front of a Ganesh temple, Pune (Maharashtra), India. Wired into the "Inde · Pune" Projets card in `parcours.html`.
+- `pj-vietnam-saigon.jpg` — photo of PJ in a restaurant in Saigon (Hô Chi Minh-Ville), Vietnam. Wired into the "Vietnam · Hô Chi Minh-Ville" Projets card in `parcours.html`.
+- `pj-europe-stop.jpg` — illustrated image representing hitchhiking across Europe (Slovenia road). Wired into the "Europe · 20 pays en stop" Projets card in `parcours.html`.
 
 **`assets/logos/`** (3rd-party logos + PJ brand identity):
 - `pj-logo.png` — stylized PJ avatar on violet background, 256×256. Used as the round brand badge (`.brand-logo` in every header/footer). Already round-ready, so `.brand-logo` just clips it with `border-radius:50%` + `object-fit:cover`.
@@ -56,7 +59,7 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 - `og-image.jpg` — Open Graph share card (1200×630 JPG q90, ~72 KB). Portrait on the left half, accent violet on the right. Referenced as an absolute URL in the `og:image` and `twitter:image` meta tags of all 4 standard HTML pages. Generated deterministically from `assets/photos/pj-portrait.jpg` via PowerShell `System.Drawing`.
 
 **`assets/placeholders/`** (TODO images awaiting real photos):
-- `travel.svg` — placeholder SVG with a "TODO" label baked into the image. Still used in 3 Projets cards (Inde Vigyan Ashram, Vietnam Hô Chi Minh, Europe 20 pays). Dark-themed by design. To remove when real photos are taken.
+- `travel.svg` — placeholder SVG with a "TODO" label baked into the image. No longer used in any HTML page (all 3 Projets cards now have real images). Can be deleted once confirmed.
 
 ## Architecture
 
