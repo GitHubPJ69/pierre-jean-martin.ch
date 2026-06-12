@@ -333,6 +333,8 @@ p{margin:0 0 1rem}
 .avatar.c4{background:linear-gradient(135deg,#f472b6,#a78bfa)}
 .avatar.c5{background:linear-gradient(135deg,#f87171,#fbbf24)}
 .avatar.c6{background:linear-gradient(135deg,#60a5fa,#34d399)}
+.avatar.c7{background:linear-gradient(135deg,#22d3ee,#a78bfa)}
+.avatar.c8{background:linear-gradient(135deg,#fbbf24,#f472b6)}
 .review-meta{display:flex;flex-direction:column;line-height:1.25;gap:.15rem}
 .review-name{font-weight:600;color:var(--text)}
 .review-context{font-size:.82rem;color:var(--muted);font-family:var(--font-mono)}
