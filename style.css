@@ -576,3 +576,7 @@ footer{
 .faq details[open] summary::after{content:"\2013"}
 .faq summary:hover{color:var(--accent)}
 .faq .faq-a{margin:0;padding:0 1.3rem 1.2rem;color:var(--muted)}
+
+/* Mailto fallback line under form submit buttons (#25 phase 1) */
+.form-fallback{margin:1rem 0 0;font-size:.86rem;color:var(--muted)}
+.form-fallback a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
