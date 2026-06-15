@@ -55,8 +55,9 @@ No build artifacts, no `dist/`, no generated files. What you see is what's serve
 - `epfl-secouriste.png` — EPFL Secouriste First Aid logo (217×233, ~7 KB). Wired into the "Secouriste" card in the Parcours section of `parcours.html`. Square logo on white background, displayed via the `.parcours-media.logo` variant (white bg + `object-fit:contain`).
 - `gymnase-etoy-logo.png` — Gymnase d'Étoy logo (788×230, ~53 KB), black wordmark on transparent background. Wired into the "Professeur Gymnase d'Étoy" card. Uses `.parcours-media.logo` (white bg + contain) so the black wordmark is readable.
 
-**`assets/meta/`** (social-share metadata):
+**`assets/meta/`** (social-share metadata + downloadable docs):
 - `og-image.jpg` — Open Graph share card (1200×630 JPG q90, ~72 KB). Portrait on the left half, accent violet on the right. Referenced as an absolute URL in the `og:image` and `twitter:image` meta tags of all 4 standard HTML pages. Generated deterministically from `assets/photos/pj-portrait.jpg` via PowerShell `System.Drawing`.
+- `pj-cv-fr.pdf` / `pj-cv-en.pdf` — PJ's CV in French and English (~30 KB each). Wired into the final "Envie de discuter ?" CTA card of `parcours.html` as two `download` buttons ("CV · FR" / "CV · EN"). No German version yet.
 
 **`assets/placeholders/`** (TODO images awaiting real photos):
 - `travel.svg` — placeholder SVG with a "TODO" label baked into the image. No longer used in any HTML page (all 3 Projets cards now have real images). Can be deleted once confirmed.
