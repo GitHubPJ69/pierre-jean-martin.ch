@@ -551,3 +551,28 @@ footer{
 @media (prefers-reduced-motion:reduce){
   .fade-up{opacity:1;transform:none}
 }
+
+/* ============================================================
+   FAQ (cours.html) · native <details name> exclusive accordion
+   ============================================================ */
+.faq{display:flex;flex-direction:column;gap:.8rem;margin-top:2rem;max-width:840px}
+.faq details{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+.faq details[open]{border-color:var(--border-strong)}
+.faq summary{
+  list-style:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.1rem 1.3rem;
+  font-weight:600;font-size:1.02rem;color:var(--text);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";flex:0 0 auto;
+  font-size:1.5rem;line-height:1;color:var(--accent);
+}
+.faq details[open] summary::after{content:"\2013"}
+.faq summary:hover{color:var(--accent)}
+.faq .faq-a{margin:0;padding:0 1.3rem 1.2rem;color:var(--muted)}
