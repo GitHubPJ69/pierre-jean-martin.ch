@@ -139,7 +139,7 @@ No inline styles in the HTML except for occasional one-off `style="padding:…"`
 - **Apprentus**: `https://www.apprentus.ch/in/pierre-jean.m`. Same pattern: per-review attribution + global button. 2 occurrences in `cours.html`.
 - **Portrait photo**: `assets/photos/pj-portrait.jpg` (used in `index.html` hero, referenced as an absolute URL in the JSON-LD Person `image` field). Real photos and logos wired in `parcours.html` live under `assets/photos/` and `assets/logos/`: `pj-diplome.jpg`, `pj-pompier-paysage.jpg`, `pj-parachute.jpg`, `cours-maths-physique-prog.jpg`, `4l-trophy.jpg` (photos), `epfl-logo.png`, `epfl-secouriste.png`, `gymnase-etoy-logo.png` (logos). Only `assets/placeholders/travel.svg` remains, in 3 Projets cards.
 - **TODO markers** that still need real content:
-  - `<!-- TODO: remplacer par un vrai projet entreprise -->` in `entreprises.html` (×3)
+  - `entreprises.html` has **no "Références / missions récentes" section** on purpose: the three placeholder mission cards were removed rather than ship fake B2B references. Re-add a real references section (with the `.project-ref` / `.sector` / `.mission` / `.result` CSS, still in `style.css`) once concrete client missions can be named.
   - `<!-- TODO: ... -->` in `parcours.html`: Europe trip period date.
   - `travel.svg` placeholder in 3 Projets cards (Inde, Vietnam, Europe) to swap for real photos.
 
