@@ -161,6 +161,16 @@
       de: ["Bauen.", "Lehren.", "Innovieren."]
     };
 
+    // Respect reduced-motion: show a single static word, no typing animation.
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      const setStatic = (newLang) => {
+        const lang = LANGS.includes(newLang) ? newLang : "fr";
+        el.textContent = (WORDS[lang] || WORDS.fr)[0];
+      };
+      setStatic("fr");
+      return setStatic;
+    }
+
     let timer = null;
     let wordIdx = 0;
     let charIdx = 0;
