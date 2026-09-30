@@ -1,5 +1,5 @@
 /* pierre-jean-martin.ch · shared behaviors
-   i18n (FR/EN/DE) · footer year · email obfuscation · form → mailto · mobile nav */
+   i18n (FR/EN/DE) · footer year · email obfuscation · form → mailto · mobile nav · analytics events */
 
 (function(){
   "use strict";
@@ -97,6 +97,21 @@
     });
   }
 
+  // -------- Analytics events (self-hosted GoatCounter) --------
+  // No-op when count.js is blocked or hasn't loaded yet.
+  function track(name){
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: name, title: name, event: true });
+    }
+  }
+
+  function bindMailtoTracking(){
+    // One delegated listener covers every [data-email] link on the page.
+    document.addEventListener("click", (e) => {
+      if (e.target.closest && e.target.closest("a[data-email]")) track("mailto-contact");
+    });
+  }
+
   // -------- Form → mailto --------
   function bindMailtoForms(email){
     document.querySelectorAll("[data-form-mailto]").forEach(form => {
@@ -110,6 +125,8 @@
           lines.push(`${key}: ${value}`);
         }
         const body = lines.join("\n");
+        // Counts the mail client opening, not a confirmed send (no backend).
+        track("contact-intent");
         window.location.href =
           `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
@@ -234,6 +251,7 @@
     bindFadeUp();
     bindSpotlight();
     bindMailtoForms(email);
+    bindMailtoTracking();
     twReset = bindTypewriter();
     applyLang(detectLang());
   });

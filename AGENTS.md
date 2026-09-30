@@ -12,7 +12,7 @@ Hard rules:
 - **Do not touch `CNAME`**: it pins the GitHub Pages custom domain.
 - **Do not introduce a build step or `package.json`.** Every file must be runnable as-is by opening it in a browser.
 - **Only two Google Fonts**: `Space Grotesk` and `JetBrains Mono`. Don't add Inter, Roboto, system-ui-only fallbacks for body, etc.
-- **No backend, no third-party JS except GoatCounter for privacy-friendly, cookie-free analytics.** Forms use `mailto:` only (see `app.js`).
+- **No backend, no third-party JS except the self-hosted GoatCounter (`https://stats.pierre-jean-martin.ch/count.js`) for privacy-friendly, cookie-free analytics.** Forms use `mailto:` only (see `app.js`).
 - **Never put the email address as a literal string in HTML.** It's assembled at runtime in `app.js` (`['contact','pierre-jean-martin.ch'].join('@')`) and injected into `[data-email]` elements.
 
 ## File layout
@@ -106,8 +106,9 @@ On `DOMContentLoaded`:
 4. `bindLangSwitchers()`: wires `.lang-switch button[data-lang]` clicks.
 5. `bindMobileNav()`: wires `.nav-toggle` to toggle `.menu.open` under 768px.
 6. `bindFadeUp()`: IntersectionObserver that adds `.in-view` to any `.fade-up` element when it enters the viewport. Gracefully no-ops if IntersectionObserver is missing (adds `.in-view` immediately). Pair with the `.fade-up` CSS rule and the `:nth-child` stagger to get a scroll fade-in. Currently used by the "Mes cours" cards in `cours.html`.
-7. `bindMailtoForms(email)`: wires `[data-form-mailto]` submit → builds `mailto:` with subject from `data-subject-{lang}` and body from `FormData` entries (one `key: value` per line).
-8. `applyLang(detectLang())`: final pass that syncs everything to the persisted/detected language.
+7. `bindMailtoForms(email)`: wires `[data-form-mailto]` submit → builds `mailto:` with subject from `data-subject-{lang}` and body from `FormData` entries (one `key: value` per line), and sends the `contact-intent` GoatCounter event just before opening it.
+8. `bindMailtoTracking()`: one delegated click listener that sends the `mailto-contact` GoatCounter event for every `a[data-email]` link. Events go through `track(name)`, a no-op when `count.js` is blocked or not loaded yet.
+9. `applyLang(detectLang())`: final pass that syncs everything to the persisted/detected language.
 
 When you add new behavior, follow the same IIFE + binder pattern; don't add a second `<script>` tag or a module.
 
@@ -172,7 +173,13 @@ Commit and PR title prefixes used in this repo: `feat:`, `fix:`, `chore:`, `docs
 
 External dashboards to check periodically. Bookmarks are nice in the browser; this section is the canonical reference so future sessions know where to look.
 
-- **GoatCounter** (privacy-friendly, cookie-free traffic analytics): https://pierrejeanmartin.goatcounter.com/ — daily/weekly visits, top pages, referrers, countries. Public-readable by default. Tracking script is wired in the footer of all 4 pages.
+- **GoatCounter** (privacy-friendly, cookie-free traffic analytics), self-hosted on the Swiss VPS: https://stats.pierre-jean-martin.ch/ (daily/weekly visits, top pages, referrers, countries). The tracking tag sits just before `</body>` in all 6 HTML pages (index, parcours, cours, entreprises, mentions-legales, 404), exactly once per page:
+  `<script data-goatcounter="https://stats.pierre-jean-martin.ch/count" async src="https://stats.pierre-jean-martin.ch/count.js"></script>`
+  The old `pierrejeanmartin.goatcounter.com` / `gc.zgo.at` tag is retired; don't reintroduce it. If the privacy wording changes, update the Confidentialité section of `mentions-legales.html` in all three languages.
+  Custom events (sent from `app.js` via `track()`):
+  - `contact-intent`: submit of a `[data-form-mailto]` form, right before the `mailto:` opens. It measures the mail client opening, **not** a sent message.
+  - `mailto-contact`: click on any `a[data-email]` link.
+  If a backend (`api.`) is ever wired to the forms, add a `contact-submit` event fired only after the backend's OK response, and keep `contact-intent` for the mailto path.
 - **Google Search Console** (SEO, indexing, sitemap): https://search.google.com/search-console — property `https://pierre-jean-martin.ch/` (URL prefix). Ownership verified via the `google77d53b16f40f54d2.html` file at the repo root, which must stay in place to remain verified. Sitemap `sitemap.xml` is submitted. Useful tabs: Performance (queries, clicks, impressions), Pages (indexing status), Sitemaps, URL inspection.
 
 Cadence: GoatCounter is interesting weekly. GSC has very little signal in the first 30 days and is most useful monthly thereafter.

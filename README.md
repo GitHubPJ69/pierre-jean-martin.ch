@@ -9,7 +9,7 @@ Live at **[pierre-jean-martin.ch](https://pierre-jean-martin.ch)**.
 Vanilla HTML, CSS, and JavaScript. No framework, no bundler, no build step, no `package.json`. What you see in the repo is what gets served.
 
 - Two Google Fonts only: `Space Grotesk` and `JetBrains Mono`.
-- [GoatCounter](https://www.goatcounter.com/) for privacy-friendly, cookie-free analytics. No other third-party JS.
+- Self-hosted [GoatCounter](https://www.goatcounter.com/) at `stats.pierre-jean-martin.ch` (Swiss server) for privacy-friendly, cookie-free analytics. No other third-party JS.
 - Forms use `mailto:` only. No backend.
 - The email address is never written as a literal string in HTML; it is assembled at runtime in `app.js` and injected into `[data-email]` elements.
 
