@@ -46,7 +46,7 @@
       src: url("fonts/caveat-latin.woff2") format("woff2");
       font-weight: 600;
       font-style: normal;
-      font-display: block;
+      font-display: swap;
     }
 
     :root {
@@ -114,7 +114,8 @@
     .env {
       position: relative;
       width: 100%;
-      aspect-ratio: 3 / 2;
+      height: 0;
+      padding-bottom: 66.6667%;
       perspective: 900px;
     }
 
@@ -131,7 +132,8 @@
 
     .layer {
       position: absolute;
-      inset: 0;
+      left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
       display: block;
@@ -216,18 +218,22 @@
       left: 50%;
       top: 62%;
       width: 24%;
-      aspect-ratio: 1;
+      height: 0;
+      padding-bottom: 24%;
       margin: -12% 0 0 -12%;
       border-radius: 50%;
       animation: pulse 1.7s ease-in-out .5s infinite;
     }
 
     /* Larger touch target than the visible seal. */
-    .seal::before { content: ""; position: absolute; inset: -22%; border-radius: 50%; }
+    .seal::before { content: ""; position: absolute; left: -22%; top: -22%; width: 144%; height: 144%; border-radius: 50%; }
 
     .ring {
       position: absolute;
-      inset: 0;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       border: 2px solid var(--wax);
       opacity: 0;
@@ -235,7 +241,7 @@
       pointer-events: none;
     }
 
-    .half { position: absolute; inset: 0; display: block; will-change: transform, opacity; }
+    .half { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; will-change: transform, opacity; }
     .half svg { display: block; width: 100%; height: 100%; overflow: visible; }
     .half.l { clip-path: polygon(-20% -20%, 53.5% -20%, 47.5% 20%, 57.5% 38%, 45.5% 58%, 56.5% 78%, 49.5% 120%, -20% 120%); }
     .half.r { clip-path: polygon(120% -20%, 52% -20%, 46% 20%, 56% 38%, 44% 58%, 55% 78%, 48% 120%, 120% 120%); }
@@ -259,14 +265,16 @@
       right: 4%;
       bottom: 5%;
       width: 11%;
-      aspect-ratio: 2 / 3;
+      height: 0;
+      padding-bottom: 16.5%;
       opacity: .5;
       --pine-body: #7a5a36;
       --pine-leaf: #7a5a36;
       --pine-hatch: #c9a376;
     }
 
-    .pine::before { content: ""; position: absolute; inset: -30%; }
+    .pine::before { content: ""; position: absolute; left: -30%; top: -30%; width: 160%; height: 160%; }
+    .pine svg { position: absolute; left: 0; top: 0; }
     .pine svg, .confetti svg { display: block; width: 100%; height: 100%; overflow: visible; }
     .pine.spin svg { animation: spin .9s cubic-bezier(.3, 1.4, .5, 1) both; }
 
@@ -300,7 +308,7 @@
       text-underline-offset: 4px;
     }
 
-    .fallback[hidden] { display: none; }
+    .fallback[hidden], .hint[hidden] { display: none; }
 
     /* ---------- Opening sequence, about 2.5 s from the tap to the redirect ---------- */
     .open .seal { animation: none; pointer-events: none; }
@@ -390,15 +398,15 @@
       </symbol>
 
       <symbol id="s-pine" viewBox="0 0 40 60">
-        <g fill="var(--pine-leaf, #5d7a3a)">
+        <g style="fill: var(--pine-leaf, #5d7a3a)">
           <path d="M20,26 C16,16 18,7 20,1 C22,7 24,16 20,26Z" />
           <path d="M19,26 C12,22 8,13 7,6 C13,10 18,16 20,26Z" />
           <path d="M21,26 C28,22 32,13 33,6 C27,10 22,16 20,26Z" />
           <path d="M18,27 C10,26 4,21 2,15 C9,16 15,20 19,27Z" />
           <path d="M22,27 C30,26 36,21 38,15 C31,16 25,20 21,27Z" />
         </g>
-        <ellipse cx="20" cy="41" rx="13" ry="17" fill="var(--pine-body, #d6a03a)" />
-        <g clip-path="url(#c-pine)" fill="none" stroke="var(--pine-hatch, #a87222)" stroke-width="1.3">
+        <ellipse cx="20" cy="41" rx="13" ry="17" style="fill: var(--pine-body, #d6a03a)" />
+        <g clip-path="url(#c-pine)" fill="none" stroke-width="1.3" style="stroke: var(--pine-hatch, #a87222)">
           <path d="M-2,34 L18,62 M4,24 L30,60 M12,20 L40,58 M22,20 L44,50" />
           <path d="M42,34 L22,62 M36,24 L10,60 M28,20 L0,58 M18,20 L-4,50" />
         </g>
@@ -460,8 +468,6 @@
     (function () {
       'use strict';
 
-      if (CAPSULE_REDUCED) { return; }
-
       var AUTO_OPEN_MS = 4000;  // nobody is left waiting if the seal is never tapped
       var OPEN_MS = 2500;       // from the trigger to the redirect
       var FALLBACK_MS = 1500;   // show a plain link if the redirect did not happen
@@ -474,6 +480,15 @@
       var fallback = document.getElementById('fallback');
       var opened = false;
       var autoTimer = null;
+
+      // Reduced motion: the head script has already asked for the redirect. If it
+      // is slow or blocked, leave a working seal and a plain link, no animation.
+      if (CAPSULE_REDUCED) {
+        document.getElementById('hint').hidden = true;
+        fallback.hidden = false;
+        seal.addEventListener('click', function () { window.location.replace(CAPSULE_TARGET); });
+        return;
+      }
 
       // Illegible ink lines under the greeting: enough to look written, nothing to read.
       function scribble() {
@@ -527,12 +542,12 @@
         if (opened) { return; }
         opened = true;
         window.clearTimeout(autoTimer);
-        seal.setAttribute('aria-disabled', 'true');
-        burst();
-        scene.classList.add('open');
-        // One timer drives the redirect, not the end of the animations: a
+        // One timer drives the redirect, set before anything decorative: a
         // broken animation must never strand the visitor.
         window.setTimeout(leave, OPEN_MS);
+        seal.setAttribute('aria-disabled', 'true');
+        scene.classList.add('open');
+        try { burst(); } catch (e) { /* confetti are optional */ }
       }
 
       function arm() {
@@ -540,7 +555,6 @@
         autoTimer = window.setTimeout(open, AUTO_OPEN_MS);
       }
 
-      scribble();
       seal.addEventListener('click', open);
 
       // Easter egg: the pineapple spins when touched. It never opens the letter.
@@ -550,7 +564,8 @@
         pine.classList.add('spin');
       });
 
-      // Count the 4 s only while the page is actually on screen.
+      // Start the 4 s countdown once the page has been on screen (a tab opened in
+      // the background waits until it is shown).
       if (document.visibilityState === 'hidden') {
         document.addEventListener('visibilitychange', function () {
           if (document.visibilityState === 'visible') { arm(); }
@@ -558,6 +573,8 @@
       } else {
         arm();
       }
+
+      try { scribble(); } catch (e) { /* the ink lines are optional */ }
 
       // Restored from the back-forward cache: start again from a sealed envelope.
       window.addEventListener('pageshow', function (event) {
