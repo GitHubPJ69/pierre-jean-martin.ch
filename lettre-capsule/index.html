@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Lettre time capsule, PJ 2024</title>
+  <meta name="description" content="Écrite à la Magistrale EPFL 2024, à ouvrir en 2026." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#efe3cb" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pierre-Jean Martin" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://pierre-jean-martin.ch/lettre-capsule/" />
+  <meta property="og:title" content="Lettre time capsule, PJ 2024" />
+  <meta property="og:description" content="Écrite à la Magistrale EPFL 2024, à ouvrir en 2026." />
+  <meta property="og:image" content="https://pierre-jean-martin.ch/lettre-capsule/og.png" />
+  <meta property="og:image:secure_url" content="https://pierre-jean-martin.ch/lettre-capsule/og.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta property="og:image:alt" content="Enveloppe kraft scellée d'un cachet de cire PJ. Lettre time capsule, PJ, Magistrale EPFL 2024." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://pierre-jean-martin.ch/lettre-capsule/" />
+  <meta name="twitter:title" content="Lettre time capsule, PJ 2024" />
+  <meta name="twitter:description" content="Écrite à la Magistrale EPFL 2024, à ouvrir en 2026." />
+  <meta name="twitter:image" content="https://pierre-jean-martin.ch/lettre-capsule/og.png" />
+  <meta name="twitter:image:alt" content="Enveloppe kraft scellée d'un cachet de cire PJ. Lettre time capsule, PJ, Magistrale EPFL 2024." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23a8231c'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%237a1511' stroke-width='1.5'/%3E%3C/svg%3E" />
+  <link rel="preload" href="fonts/caveat-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- The redirect is JavaScript only, on purpose: link-preview crawlers do not
+       run scripts, so they stop on the tags above. Reduced motion skips the
+       animation and leaves straight away. -->
+  <script>
+    var CAPSULE_TARGET = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+    var CAPSULE_REDUCED = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    if (CAPSULE_REDUCED) { window.location.replace(CAPSULE_TARGET); }
+  </script>
+
+  <style>
+    @font-face {
+      font-family: "Caveat";
+      src: url("fonts/caveat-latin.woff2") format("woff2");
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+
+    :root {
+      color-scheme: light;
+      --paper: #f4ead6;
+      --paper-deep: #e2d1ad;
+      --sheet: #fbf6ea;
+      --ink: #27304a;
+      --kraft: #c9a376;
+      --kraft-light: #d8b88d;
+      --kraft-dark: #a9835a;
+      --kraft-inside: #94714b;
+      --lining: #ead9b8;
+      --wax: #a8231c;
+      --wax-light: #cf4a3c;
+      --wax-dark: #7a1511;
+      --leaf: #5d7a3a;
+      --gold: #d6a03a;
+      --gold-dark: #a87222;
+      --hand: "Caveat", "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+      --w: min(86vw, 400px, 72vh);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; margin: 0; }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      overflow: hidden;
+      color: var(--ink);
+      font-family: var(--hand);
+      font-weight: 600;
+      background-color: var(--paper);
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .32 0 0 0 0 .18 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(120% 85% at 50% 32%, #f9f1df 0%, var(--paper) 45%, var(--paper-deep) 100%);
+      -webkit-tap-highlight-color: transparent;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+    .stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* The scene keeps free room above the envelope for the letter to rise into. */
+    .scene {
+      position: relative;
+      width: var(--w);
+      padding-top: calc(var(--w) * 0.4);
+      animation: arrive .5s ease-out both;
+    }
+
+    .env {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      perspective: 900px;
+    }
+
+    .env::after {
+      content: "";
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      bottom: -9%;
+      height: 14%;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(70, 48, 20, .32), rgba(70, 48, 20, 0) 100%);
+      z-index: 0;
+    }
+
+    .layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .back { z-index: 1; }
+    .front { z-index: 3; pointer-events: none; }
+
+    .letter {
+      position: absolute;
+      z-index: 2;
+      left: 6%;
+      top: 6%;
+      width: 88%;
+      height: 90%;
+      padding: 8% 8% 0;
+      border-radius: 3px;
+      background-color: var(--sheet);
+      background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 1.42em, rgba(39, 48, 74, .13) 1.42em, rgba(39, 48, 74, .13) calc(1.42em + 1px));
+      background-position: 0 .5em;
+      box-shadow: 0 1px 3px rgba(60, 40, 15, .28);
+      font-size: calc(var(--w) * 0.088);
+      line-height: 1.42;
+      will-change: transform;
+    }
+
+    .dear {
+      margin: 0;
+      white-space: nowrap;
+      clip-path: inset(-20% 100% -30% 0);
+    }
+
+    .scribble {
+      display: block;
+      width: 100%;
+      margin-top: .35em;
+      overflow: visible;
+      fill: none;
+      stroke: var(--ink);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .5;
+    }
+
+    .flap {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 66.6667%;
+      transform-origin: 50% 0;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    .flap svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .flap .lining { opacity: 0; }
+
+    button {
+      appearance: none;
+      -webkit-appearance: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; border-radius: 50%; }
+
+    /* Wax seal: the flap tip sits at 50% / 62% of the envelope. Percent margins
+       resolve against the envelope width, which keeps the seal square and centred. */
+    .seal {
+      position: absolute;
+      z-index: 6;
+      left: 50%;
+      top: 62%;
+      width: 24%;
+      aspect-ratio: 1;
+      margin: -12% 0 0 -12%;
+      border-radius: 50%;
+      animation: pulse 1.7s ease-in-out .5s infinite;
+    }
+
+    /* Larger touch target than the visible seal. */
+    .seal::before { content: ""; position: absolute; inset: -22%; border-radius: 50%; }
+
+    .ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid var(--wax);
+      opacity: 0;
+      animation: ring 1.7s ease-out .5s infinite;
+      pointer-events: none;
+    }
+
+    .half { position: absolute; inset: 0; display: block; will-change: transform, opacity; }
+    .half svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .half.l { clip-path: polygon(-20% -20%, 53.5% -20%, 47.5% 20%, 57.5% 38%, 45.5% 58%, 56.5% 78%, 49.5% 120%, -20% 120%); }
+    .half.r { clip-path: polygon(120% -20%, 52% -20%, 46% 20%, 56% 38%, 44% 58%, 55% 78%, 48% 120%, 120% 120%); }
+
+    .crumbs { position: absolute; z-index: 5; left: 50%; top: 62%; width: 0; height: 0; pointer-events: none; }
+    .crumbs i {
+      position: absolute;
+      left: -3px;
+      top: -3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--wax);
+      opacity: 0;
+    }
+
+    /* The discreet pineapple, ink-stamped in the corner of the envelope. */
+    .pine {
+      position: absolute;
+      z-index: 6;
+      right: 4%;
+      bottom: 5%;
+      width: 11%;
+      aspect-ratio: 2 / 3;
+      opacity: .5;
+      --pine-body: #7a5a36;
+      --pine-leaf: #7a5a36;
+      --pine-hatch: #c9a376;
+    }
+
+    .pine::before { content: ""; position: absolute; inset: -30%; }
+    .pine svg, .confetti svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .pine.spin svg { animation: spin .9s cubic-bezier(.3, 1.4, .5, 1) both; }
+
+    .confetti { position: absolute; z-index: 7; left: 50%; top: 8%; width: 0; height: 0; pointer-events: none; }
+    .confetti b {
+      position: absolute;
+      left: calc(var(--w) * -0.0325);
+      top: calc(var(--w) * -0.04875);
+      width: calc(var(--w) * 0.065);
+      height: calc(var(--w) * 0.0975);
+      opacity: 0;
+      animation: fly-x 1.25s cubic-bezier(.1, .6, .4, 1) var(--delay) both;
+    }
+    .confetti b span { display: block; width: 100%; height: 100%; animation: fly-y 1.25s cubic-bezier(.2, .7, .5, 1) var(--delay) both; }
+    .confetti b svg { animation: tumble 1.25s linear var(--delay) both; }
+
+    .hint {
+      margin: calc(var(--w) * 0.09) 0 0;
+      text-align: center;
+      font-size: calc(var(--w) * 0.068);
+      line-height: 1.2;
+      opacity: .78;
+      animation: hint 1.7s ease-in-out .5s infinite;
+    }
+
+    .fallback {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: 26px;
+      text-underline-offset: 4px;
+    }
+
+    .fallback[hidden] { display: none; }
+
+    /* ---------- Opening sequence, about 2.5 s from the tap to the redirect ---------- */
+    .open .seal { animation: none; pointer-events: none; }
+    .open .ring { animation: none; opacity: 0; }
+    .open .half.l { animation: break-l .55s cubic-bezier(.4, 0, .8, .6) both; }
+    .open .half.r { animation: break-r .55s cubic-bezier(.4, 0, .8, .6) both; }
+    .open .crumbs i { animation: crumb .5s ease-out .05s both; }
+    .open .flap { animation: flap .7s cubic-bezier(.45, 0, .55, 1) .38s both; }
+    .open .flap .lining { animation: lining .7s linear .38s both; }
+    .open .flap .shade { animation: shade .7s linear .38s both; }
+    .open .letter { animation: slide .85s cubic-bezier(.2, .8, .25, 1) 1s both; }
+    .open .dear { animation: write .6s ease-out 1.2s both; }
+    .open .hint { animation: fade-out .25s ease-out both; }
+
+    @keyframes arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+    @keyframes ring { 0% { transform: scale(1); opacity: .55; } 80%, 100% { transform: scale(1.65); opacity: 0; } }
+    @keyframes hint { 0%, 100% { opacity: .78; } 50% { opacity: .4; } }
+    @keyframes fade-out { to { opacity: 0; } }
+    @keyframes break-l {
+      0% { transform: none; opacity: 1; }
+      25% { transform: translate(-7%, 2%) rotate(-7deg); opacity: 1; }
+      100% { transform: translate(-45%, 150%) rotate(-48deg); opacity: 0; }
+    }
+    @keyframes break-r {
+      0% { transform: none; opacity: 1; }
+      25% { transform: translate(7%, 2%) rotate(7deg); opacity: 1; }
+      100% { transform: translate(50%, 140%) rotate(52deg); opacity: 0; }
+    }
+    @keyframes crumb {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--x), var(--y)) scale(.4); opacity: 0; }
+    }
+    /* The flap passes behind the letter once it is past the vertical. */
+    @keyframes flap {
+      0% { transform: rotateX(0deg); z-index: 4; }
+      49.9% { z-index: 4; }
+      50% { z-index: 1; }
+      100% { transform: rotateX(180deg); z-index: 1; }
+    }
+    @keyframes lining { 0%, 49.9% { opacity: 0; } 50%, 100% { opacity: 1; } }
+    @keyframes shade { 0%, 49.9% { opacity: .2; } 50%, 100% { opacity: 0; } }
+    @keyframes slide { from { transform: translateY(0); } to { transform: translateY(-64%); } }
+    @keyframes write { from { clip-path: inset(-20% 100% -30% 0); } to { clip-path: inset(-20% -5% -30% 0); } }
+    @keyframes spin { from { transform: rotate(0deg) scale(1); } 50% { transform: rotate(200deg) scale(1.25); } to { transform: rotate(360deg) scale(1); } }
+    @keyframes fly-x { 0% { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(var(--x)); opacity: 0; } }
+    @keyframes fly-y { 0% { transform: translateY(0); } 45% { transform: translateY(var(--up)); } 100% { transform: translateY(var(--down)); } }
+    @keyframes tumble { from { transform: rotate(0deg) scale(.5); } to { transform: rotate(var(--turn)) scale(1); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+    }
+  </style>
+  <!-- Without JavaScript the seal cannot open anything: drop the invitation, keep the link. -->
+  <noscript><style>.hint, .ring { display: none; } .seal { animation: none; cursor: default; }</style></noscript>
+</head>
+<body>
+  <svg class="defs" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-kraft" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#d8b88d" />
+        <stop offset="1" stop-color="#c39c6e" />
+      </linearGradient>
+      <linearGradient id="g-flap" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#cfab7e" />
+        <stop offset="1" stop-color="#b8915f" />
+      </linearGradient>
+      <radialGradient id="g-wax" cx="38%" cy="32%" r="75%">
+        <stop offset="0" stop-color="#cf4a3c" />
+        <stop offset=".55" stop-color="#a8231c" />
+        <stop offset="1" stop-color="#7a1511" />
+      </radialGradient>
+      <filter id="f-grain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n" />
+        <feColorMatrix in="n" values="0 0 0 0 .3  0 0 0 0 .2  0 0 0 0 .08  0 0 0 .32 0" result="t" />
+        <feComposite in="t" in2="SourceGraphic" operator="in" result="g" />
+        <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="g" /></feMerge>
+      </filter>
+      <clipPath id="c-pine"><ellipse cx="20" cy="41" rx="13" ry="17" /></clipPath>
+
+      <symbol id="s-wax" viewBox="0 0 100 100">
+        <path fill="url(#g-wax)" d="M95.3,50 C95.8,56.3 93.6,63.9 90.5,69.5 C87.5,75.2 82.2,80.3 76.9,83.8 C71.7,87.2 65.2,89 59.2,90.3 C53.1,91.5 46.4,92.5 40.6,91.1 C34.9,89.7 29.2,85.7 24.7,81.8 C20.1,77.9 16,73.1 13.1,67.8 C10.2,62.5 7.3,55.9 7.3,50 C7.3,44.1 10.8,38.3 13.1,32.2 C15.4,26.2 16.7,18.5 21.1,13.8 C25.6,9.2 33.2,5.2 39.6,4.3 C46,3.4 52.9,6.9 59.5,8.5 C66,10.1 74.1,10 78.8,13.9 C83.5,17.8 84.6,26 87.4,32 C90.1,38 94.8,43.7 95.3,50Z" />
+        <circle cx="50" cy="49" r="31" fill="none" stroke="#7a1511" stroke-width="2.4" opacity=".75" />
+        <circle cx="50" cy="49" r="33.5" fill="none" stroke="#e06a58" stroke-width="1" opacity=".5" />
+        <text x="50" y="62" text-anchor="middle" font-family="Caveat, cursive" font-weight="600" font-size="40" fill="#e06a58" opacity=".55" transform="translate(-1 -1)">PJ</text>
+        <text x="50" y="62" text-anchor="middle" font-family="Caveat, cursive" font-weight="600" font-size="40" fill="#6a100d">PJ</text>
+      </symbol>
+
+      <symbol id="s-pine" viewBox="0 0 40 60">
+        <g fill="var(--pine-leaf, #5d7a3a)">
+          <path d="M20,26 C16,16 18,7 20,1 C22,7 24,16 20,26Z" />
+          <path d="M19,26 C12,22 8,13 7,6 C13,10 18,16 20,26Z" />
+          <path d="M21,26 C28,22 32,13 33,6 C27,10 22,16 20,26Z" />
+          <path d="M18,27 C10,26 4,21 2,15 C9,16 15,20 19,27Z" />
+          <path d="M22,27 C30,26 36,21 38,15 C31,16 25,20 21,27Z" />
+        </g>
+        <ellipse cx="20" cy="41" rx="13" ry="17" fill="var(--pine-body, #d6a03a)" />
+        <g clip-path="url(#c-pine)" fill="none" stroke="var(--pine-hatch, #a87222)" stroke-width="1.3">
+          <path d="M-2,34 L18,62 M4,24 L30,60 M12,20 L40,58 M22,20 L44,50" />
+          <path d="M42,34 L22,62 M36,24 L10,60 M28,20 L0,58 M18,20 L-4,50" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <main class="stage">
+    <div class="scene" id="scene">
+      <div class="env">
+        <svg class="layer back" viewBox="0 0 360 240" aria-hidden="true" focusable="false">
+          <rect width="360" height="240" rx="7" fill="#94714b" />
+        </svg>
+
+        <div class="letter" aria-hidden="true">
+          <p class="dear">Cher PJ du futur,</p>
+          <svg class="scribble" id="scribble" viewBox="0 0 270 110" focusable="false"></svg>
+        </div>
+
+        <svg class="layer front" viewBox="0 0 360 240" aria-hidden="true" focusable="false">
+          <path filter="url(#f-grain)" fill="url(#g-kraft)" d="M0,0 L180,140 L360,0 L360,233 Q360,240 353,240 L7,240 Q0,240 0,233 Z" />
+          <path fill="none" stroke="#a9835a" stroke-width="1.2" opacity=".65" d="M2,238 L160,125 M358,238 L200,125" />
+        </svg>
+
+        <div class="flap" aria-hidden="true">
+          <svg viewBox="0 0 360 160" focusable="false">
+            <path class="shade" fill="#4a3216" opacity=".2" d="M0,3 L360,3 L196,151 Q180,165 164,151 Z" />
+            <path filter="url(#f-grain)" fill="url(#g-flap)" d="M0,0 L7,0 L353,0 L360,0 L196,146 Q180,160 164,146 Z" />
+            <path class="lining" fill="#ead9b8" d="M0,0 L360,0 L196,146 Q180,160 164,146 Z" />
+          </svg>
+        </div>
+
+        <div class="crumbs" aria-hidden="true">
+          <i style="--x:-34px;--y:-18px"></i><i style="--x:30px;--y:-24px"></i><i style="--x:-22px;--y:30px"></i>
+          <i style="--x:38px;--y:16px"></i><i style="--x:-6px;--y:-36px"></i><i style="--x:12px;--y:38px"></i>
+        </div>
+
+        <button class="seal" id="seal" type="button" aria-label="Briser le cachet et ouvrir la lettre">
+          <span class="ring"></span>
+          <span class="half l"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#s-wax" /></svg></span>
+          <span class="half r"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><use href="#s-wax" /></svg></span>
+        </button>
+
+        <button class="pine" id="pine" type="button" aria-label="Ananas">
+          <svg viewBox="0 0 40 60" aria-hidden="true" focusable="false"><use href="#s-pine" /></svg>
+        </button>
+
+        <div class="confetti" id="confetti" aria-hidden="true"></div>
+      </div>
+
+      <p class="hint" id="hint">Touchez le cachet</p>
+    </div>
+
+    <a class="fallback" id="fallback" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="noopener" hidden>Ouvrir la lettre</a>
+    <noscript><a class="fallback" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="noopener">Ouvrir la lettre</a></noscript>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      if (CAPSULE_REDUCED) { return; }
+
+      var AUTO_OPEN_MS = 4000;  // nobody is left waiting if the seal is never tapped
+      var OPEN_MS = 2500;       // from the trigger to the redirect
+      var FALLBACK_MS = 1500;   // show a plain link if the redirect did not happen
+      var SVG_NS = 'http://www.w3.org/2000/svg';
+
+      var scene = document.getElementById('scene');
+      var seal = document.getElementById('seal');
+      var pine = document.getElementById('pine');
+      var confetti = document.getElementById('confetti');
+      var fallback = document.getElementById('fallback');
+      var opened = false;
+      var autoTimer = null;
+
+      // Illegible ink lines under the greeting: enough to look written, nothing to read.
+      function scribble() {
+        var svg = document.getElementById('scribble');
+        var seed = 2024;
+        function rnd() { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; }
+        var widths = [262, 248, 268, 150];
+        var d = '';
+        for (var row = 0; row < widths.length; row++) {
+          var y = 14 + row * 28;
+          var x = 0;
+          while (x < widths[row] - 14) {
+            var w = 16 + rnd() * 34;
+            d += 'M' + x.toFixed(1) + ',' + (y + (rnd() - 0.5) * 3).toFixed(1);
+            for (var t = 4; t < w; t += 4) {
+              d += ' q' + (1 + rnd()).toFixed(1) + ',' + (-(3 + rnd() * 6)).toFixed(1) + ' 2,' + ((rnd() - 0.5) * 2).toFixed(1) +
+                   ' t2,' + ((rnd() - 0.5) * 2).toFixed(1);
+            }
+            x += w + 7 + rnd() * 5;
+          }
+        }
+        var path = document.createElementNS(SVG_NS, 'path');
+        path.setAttribute('d', d);
+        svg.appendChild(path);
+      }
+
+      // Easter egg: pineapple confetti as the letter comes out.
+      function burst() {
+        var unit = scene.getBoundingClientRect().width / 100;
+        var count = 14;
+        for (var i = 0; i < count; i++) {
+          var side = i % 2 ? 1 : -1;
+          var spread = 16 + Math.random() * 40;
+          var piece = document.createElement('b');
+          piece.style.setProperty('--x', (side * spread * unit).toFixed(1) + 'px');
+          piece.style.setProperty('--up', (-(26 + Math.random() * 30) * unit).toFixed(1) + 'px');
+          piece.style.setProperty('--down', ((6 + Math.random() * 30) * unit).toFixed(1) + 'px');
+          piece.style.setProperty('--turn', (side * (160 + Math.random() * 380)).toFixed(0) + 'deg');
+          piece.style.setProperty('--delay', (1.05 + Math.random() * 0.18).toFixed(2) + 's');
+          piece.innerHTML = '<span><svg viewBox="0 0 40 60" focusable="false"><use href="#s-pine"/></svg></span>';
+          confetti.appendChild(piece);
+        }
+      }
+
+      function leave() {
+        window.location.replace(CAPSULE_TARGET);
+        window.setTimeout(function () { fallback.hidden = false; }, FALLBACK_MS);
+      }
+
+      function open() {
+        if (opened) { return; }
+        opened = true;
+        window.clearTimeout(autoTimer);
+        seal.setAttribute('aria-disabled', 'true');
+        burst();
+        scene.classList.add('open');
+        // One timer drives the redirect, not the end of the animations: a
+        // broken animation must never strand the visitor.
+        window.setTimeout(leave, OPEN_MS);
+      }
+
+      function arm() {
+        if (opened || autoTimer !== null) { return; }
+        autoTimer = window.setTimeout(open, AUTO_OPEN_MS);
+      }
+
+      scribble();
+      seal.addEventListener('click', open);
+
+      // Easter egg: the pineapple spins when touched. It never opens the letter.
+      pine.addEventListener('click', function () {
+        pine.classList.remove('spin');
+        void pine.offsetWidth;
+        pine.classList.add('spin');
+      });
+
+      // Count the 4 s only while the page is actually on screen.
+      if (document.visibilityState === 'hidden') {
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'visible') { arm(); }
+        });
+      } else {
+        arm();
+      }
+
+      // Restored from the back-forward cache: start again from a sealed envelope.
+      window.addEventListener('pageshow', function (event) {
+        if (event.persisted) { window.location.reload(); }
+      });
+    })();
+  </script>
+</body>
+</html>
