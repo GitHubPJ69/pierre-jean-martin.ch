@@ -468,7 +468,6 @@
     (function () {
       'use strict';
 
-      var AUTO_OPEN_MS = 4000;  // nobody is left waiting if the seal is never tapped
       var OPEN_MS = 2500;       // from the trigger to the redirect
       var FALLBACK_MS = 1500;   // show a plain link if the redirect did not happen
       var SVG_NS = 'http://www.w3.org/2000/svg';
@@ -479,7 +478,6 @@
       var confetti = document.getElementById('confetti');
       var fallback = document.getElementById('fallback');
       var opened = false;
-      var autoTimer = null;
 
       // Reduced motion: the head script has already asked for the redirect. If it
       // is slow or blocked, leave a working seal and a plain link, no animation.
@@ -541,7 +539,6 @@
       function open() {
         if (opened) { return; }
         opened = true;
-        window.clearTimeout(autoTimer);
         // One timer drives the redirect, set before anything decorative: a
         // broken animation must never strand the visitor.
         window.setTimeout(leave, OPEN_MS);
@@ -550,11 +547,7 @@
         try { burst(); } catch (e) { /* confetti are optional */ }
       }
 
-      function arm() {
-        if (opened || autoTimer !== null) { return; }
-        autoTimer = window.setTimeout(open, AUTO_OPEN_MS);
-      }
-
+      // The letter only opens on a tap: the sealed envelope waits as long as it takes.
       seal.addEventListener('click', open);
 
       // Easter egg: the pineapple spins when touched. It never opens the letter.
@@ -563,16 +556,6 @@
         void pine.offsetWidth;
         pine.classList.add('spin');
       });
-
-      // Start the 4 s countdown once the page has been on screen (a tab opened in
-      // the background waits until it is shown).
-      if (document.visibilityState === 'hidden') {
-        document.addEventListener('visibilitychange', function () {
-          if (document.visibilityState === 'visible') { arm(); }
-        });
-      } else {
-        arm();
-      }
 
       try { scribble(); } catch (e) { /* the ink lines are optional */ }
 
